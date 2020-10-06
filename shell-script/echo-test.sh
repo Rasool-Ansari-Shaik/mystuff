@@ -1,0 +1,6 @@
+echo "Rasool "
+echo -n "Ansari "
+echo "Shaik "
+echo "Kutty "
+echo -n "abc "
+echo "abcd "

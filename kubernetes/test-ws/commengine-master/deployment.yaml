@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comm-engine-deployment
+  labels:
+    app.name: comm-engine-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.name: comm-engine-deployment
+  template:
+    metadata:
+      labels:
+        app.name: comm-engine-deployment
+    spec:
+      containers:
+        - name: comm-engine-deployment
+          image: "us.icr.io/modd-namespace/comm-engine:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP

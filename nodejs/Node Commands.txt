@@ -1,0 +1,11 @@
+node -v
+npm -v
+npm init
+npm i validator
+npm install
+npm i chalk
+npm i nodemon -g
+Issue: cannot be loaded because running scripts is disabled on this system
+Solution: https://github.com/remy/nodemon/issues/1619
+
+npm i yargs

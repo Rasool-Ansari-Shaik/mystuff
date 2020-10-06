@@ -1,0 +1,127 @@
+Chapter-2: Spring Boot
+======================
+Reference: https://livebook.manning.com/book/spring-boot-in-action/chapter-2/71
+Common Application Properties: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+External Configuration: https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/boot-features-external-config.html
+Spring Boot Features: https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html
+
+$ spring init -dweb,data-jpa,h2,thymeleaf --build gradle readinglist
+
+$ gradle bootRun
+$ mvn spring-boot:run
+
+$ gradle build
+$ java -jar readinglist-0.0.1.SNAPSHOT.jar
+
+
+******
+In addition to the build plugins, notice that the Maven build in listing 2.4 has “spring-boot-starter-parent” as a parent. By rooting the project in the parent starter, the build can take advantage of Maven dependency management to inherit dependency versions for several commonly used libraries so that you don’t have to explicitly specify the versions when declaring dependencies. Notice that none of the <dependency> entries in this pom.xml file specify any versions.
+
+Unfortunately, Gradle doesn’t provide the same kind of dependency management as Maven. That’s why the Spring Boot Gradle plugin offers a third feature; it simulates dependency management for several common Spring and Spring-related dependencies. Consequently, the build.gradle file in listing 2.3 doesn’t specify any versions for any of its dependencies.
+
+Go to https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent/2.3.1.RELEASE. You can see "Managed Dependencies" in the page, where there are 576 artefacts with versions given. Using this Managed Dependencies, jar versions will be downloaded.
+******
+
+$ gradle dependencies
+-> The above command will give you a dependency tree that includes every library your project is using and their versions
+
+$ mvn dependency:tree
+
+***********
+In pom.xml, what ever the dependencies we add, those will be fetched from "Managed Dependencies" of the "spring-boot-starter-parent". For the transitive dependencies of other starter dependencies, those will be fetched from "Compile Dependencies".
+example:
+Managed Dependencies: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent/2.3.1.RELEASE
+Compile Dependencies: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/2.3.1.RELEASE
+***********
+
+Downgrading versions and excluding dependencies
+-----------------------------------------------
+https://docs.gradle.org/current/userguide/dependency_downgrade_and_exclude.html
+https://livebook.manning.com/book/spring-boot-in-action/chapter-2/116
+
+http://localhost:8000/readingList --> To execute the app
+
+
+Chapter-3
+==============
+Spring Boot auto-configuration comes with several configuration classes. All of this configuration uses Spring 4.0’s conditional configuration support to make runtime decisions as to whether or not Spring Boot’s configuration should be used or ignored.
+
+The @ConditionalOnMissingBean annotation makes it possible to override auto-configuration.
+
+Spring Boot is designed to load application-level configuration before considering its auto-configuration  classes.  Therefore (for example), if you’ve already configured a JdbcTemplate bean, then there will be a bean of type  JdbcOperations by the time that auto-configuration takes place, and the auto-configured JdbcTemplate bean will be ignored. Application-level configuration will take priority over auto-configuration.
+
+spring.main.banner-mode=OFF
+- the above property is used to disable the spring boot ascii-art banner when we run an application from command line.
+
+External Configurations
+https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/boot-features-external-config.html
+Spring boot external properties and their precedence
+1. Command line arguments.
+2. JNDI attributes from java:comp/env.
+3. Java System properties (System.getProperties()).
+4. OS environment variables.
+5. A RandomValuePropertySource that only has properties in random.*.
+6. Profile-specific application properties outside of your packaged jar (application-{profile}.properties and YAML variants)
+7. Profile-specific application properties packaged inside your jar (application-{profile}.properties and YAML variants)
+8. Application properties outside of your packaged jar (application.properties and YAML variants).
+9. Application properties packaged inside your jar (application.properties and YAML variants).
+10. @PropertySource annotations on your @Configuration classes.
+11. Default properties (specified using SpringApplication.setDefaultProperties).
+
+SpringApplication will load properties from application.properties files in the following locations and add them to the Spring Environment:
+1. A /config subdir of the current directory. 
+2. The current directory
+3. A classpath /config package (in resources, with folder name config)
+4. The classpath root (in resources)
+
+logging.path=
+logging.file=
+logging.level.root=WARN
+logging.level.root.org.springframework.security=DEBUG
+
+If you want the file name other than logback.xml, then to configure it use below property
+logging.config.classpath=logging-config.xml
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+Spring  Boot  will  use  this  connection  data  when  auto-configuring  the  DataSourcebean. The DataSource bean will be pooled, using Tomcat’s pooling DataSource if it’s available on the classpath. If not, it will look for and use one of these other connectionpool implementations on the classpath:HikariCP, Commons DBCP, Commons DBCP2
+
+spring.datasource.jndi-name=java:/comp/env/jdbc/readingListDS
+
+@ConfigurationProperties. 
+- This specifies that this bean should have its properties injected (via settermethods)  with  values  from  configuration  properties. 
+
+H2 database
+spring.h2.console.enabled=true
+http://localhost:8000/h2-console -> to access h2 db
+
+We can specify all profiles properties in a single file by separating them with three hyphens (---) in the application.properties. Provide the property (spring.profiles) in each of the section. Specify common properties in the common section without spring.profiles property.
+
+Define error.html for user defined error page, otherwise spring boot application will consider the default whitelable error page. This will be done automatically.
+Below are the parameters that are automatically available to the error.html page.
+■ .timestamp—The time that the error occurred
+■ status—The HTTP status code
+■ error—The error reason
+■ exception—The class name of the exception
+■ message—The exception message (if the error was caused by an exception)
+■ errors—Any errors from a BindingResult exception (if the error was caused
+by an exception)
+■ trace—The exception stack trace (if the error was caused by an exception)
+■ path—The URL path requested when the error occurred
+Use these like below - ${message} in thymeleaf template error.html
+
+****************************************************************
+Chapter-7: Actuator
+*********************
+The Actuator offers production-ready features such as monitoring and metrics to Spring Boot applications. The Actuator’s features are provided by way of several REST endpoints.
+http://localhost:8000/actuator
+http://localhost:8000/actuator/health
+
+
+
+
+
+
+

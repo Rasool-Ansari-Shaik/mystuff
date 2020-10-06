@@ -1,6 +1,0 @@
-java -jar ./build/libs/kafka-java-console-sample-2.0.jar 
-<kafka_brokers_sasl> <api_key> -consumer
-
-java -jar ./build/libs/kafka-java-console-sample-2.0.jar
- <kafka_brokers_sasl> <api_key> -producer
-

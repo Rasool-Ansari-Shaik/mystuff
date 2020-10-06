@@ -1,0 +1,4 @@
+https://mkyong.com/java/java-jmh-benchmark-tutorial/
+http://tutorials.jenkov.com/java-performance/jmh.html
+https://openjdk.java.net/projects/code-tools/jmh/
+https://benchmarkdotnet.org/

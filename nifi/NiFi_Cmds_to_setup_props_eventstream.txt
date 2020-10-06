@@ -1,0 +1,18 @@
+broker-5-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-3-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-1-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-2-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-4-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-0-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093
+
+
+cdt-provider-engmnt-ns-01
+
+tls-toolkit.bat standalone -n *.nifi.svc.cluster.local -f C:/Users/RasoolAnsariShaik/_1/softwares/nifi-1.11.1/conf/nifi.properties --trustStorePassword "changeit" --keyStorePassword "changeit"
+
+openssl s_client -connect broker-2-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093 -servername broker-2-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com </dev/null \
+        | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > broker-2.cert && \
+    keytool -import -noprompt -trustcacerts \
+        -alias kafka-broker -file broker-2.cert \
+        -keystore /opt/nifi/nifi-current/\*.cdt-provider-engmnt-ns-01.svc.cluster.local/truststore.jks -storepass "changeit"
+
+keytool -import -file broker-2.cert -alias cacert -keystore truststore.jks -storepass "changeit"
+
+keytool -import -file broker-2.cert -alias cacert -keystore keystore.jks -storepass "changeit"
+
+host.name}:${port.number

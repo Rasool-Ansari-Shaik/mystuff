@@ -1,0 +1,35 @@
+Helm Commands
+=================
+Reference: https://docs.bitnami.com/tutorials/create-your-first-helm-chart/
+
+$ helm create mychart
+-> to create a new chart named mychart in a new directory
+
+$ helm install --dry-run --debug ./mychart
+-> to inspect the generated definitions
+
+$ helm install --dry-run --debug ./mychart --set service.internalPort=8080 --namespace cluster-ns-1a
+-> If a user of your chart wanted to change the default configuration, they could provide overrides directly on the command-line
+ex: helm install --dry-run --debug flink --name flink-4 --namespace cdt-provider-engmnt-ns-01
+
+$ helm install example ./mychart --set service.type=NodePort --namespace cluster-ns-1a
+-> To deploy chart. By default, the chart will create a ClusterIP type Service. To access it externally, we'll use the NodePort type instead.
+
+$ helm lint ./mychart
+-> As you develop your chart, it's a good idea to run it through the linter to ensure you're following best practices and that your templates are well-formed.
+
+$ helm package ./mychart
+-> if you are looking to share your charts with your team or the community, your consumers will typically install the charts from a tar package.
+
+$ helm install example3 mychart-0.1.0.tgz --set service.type=NodePort
+-> A user can install from this package instead of a local directory by passing the package as the parameter to helm install.
+
+$ helm dep update ./mychart
+-> to pull in a dependency. Install mychart will install both mychart and mariadb chart.
+/mychart/requirements.yaml
+dependencies:
+  - name: mariadb
+    version: 0.6.0
+    repository: https://kubernetes-charts.storage.googleapis.com
+$ ls ./mychart/charts
+mariadb-0.6.0.tgz	

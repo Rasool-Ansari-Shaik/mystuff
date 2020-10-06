@@ -1,0 +1,104 @@
+@SpringBootApplication
+-> @Configuration
+-> @EnableAutoConfiguration
+-> @ComponentScan
+
+Exclude any package
+@SpringBootApplication(exclude={ClassName.class})
+OR
+@ComponentScan(basePackage={})
+
+Exclude Auto Configuration
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@EnableAutoConfiguration(excludeName={Foo.class})
+spring.autoconfigure.exclude=DataSourceAutoConfiguration
+
+Actuator
+- env, health, loggers
+
+management.endpoint.shutdown.enabled=true
+
+server.port=0 -> assign any available port
+
+Spring vs Spring Boot
+Advantages of Spring Boot
+- Starter dependency management
+- Auto configuration
+- Create standalone app using initializer, CLI
+- Embedded Container server (Tomcat, Jetty, Undertow)
+- Actuator
+
+properties
+- application.properties
+- command line arguments
+- profile specific properties (spring.profile.active)
+  - application-{profile}.properties
+  
+Thymeleaf
+- server side java template engine
+
+DB configuration
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driverClassName=
+spring.jpa.hibernate.dialect=
+spring.jpa.hibernate.ddl-auto=
+
+@RestController
+- @Controller
+- @ResponseBody
+
+@RestController vs @Controller
+- The @Controller is a common annotation that is used to mark a class as Spring MVC Controller
+- The @RestController is a special controller used in RESTFul web services
+
+Spring boot build
+- spring-boot-maven-plugin
+
+@Value
+@ConfigurationProperties
+- @ConfigurationProperties("example")
+- Relaxed Binding: the property name does not need to match the key of the environment property
+
+Yaml vs properties
+- SnakeYaml library
+- hierarchical format
+- more readable
+
+How to register a custom auto configuration
+- mention the fully qualified name of the class under resources/META-INF/spring.factories file.
+- @EnableAutoConfiguration will pickup the class from the above file
+- example in file
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.baeldung.autoconfigure.CustomAutoConfiguration
+
+Add Javascript files in Spring Boot project
+- Add js file under resources/static directory
+- management.security.enabled=FALSE
+
+@Conditional
+- @ConditionalOnBean: 
+- @ConditionalOnMissingBean: to instruct an auto-configuration to back off when a bean exists
+- @ConditionalOnProperty
+- @ConditionalOnClass
+
+name of the default H2 database is testdb
+
+Spring-boot-starter-parent 
+- Managed Dependencies
+Spring-boot-starter-web
+- Compiled Dependencies
+
+Managed Dependencies vs Compiled Dependencies
+
+
+
+
+Reference:
+https://dzone.com/articles/top-10-spring-boot-interview-questions
+https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/
+https://www.baeldung.com/spring-boot-interview-questions
+https://www.springboottutorial.com/spring-boot-interview-questions
+
+
+

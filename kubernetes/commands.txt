@@ -1,0 +1,18 @@
+=> To port forward the deployment to local system
+$ kubectl port-forward <pod-name> port1:port2
+pod-name -> pod name of the deployed service
+port1 -> local system port
+port2 -> deployed service port
+ex: kubectl port-forward hello-hi-k8s-master-hello-hi-k8s-hello-hi-k8s-68c47cfd9-dclks 8089:8817 -n cdt-provider-engmnt-ns-01
+
+You can access the application using http://localhost:8089/
+
+
+=> To access the running pod
+$ kubectl exec -it pod /bin/bash
+ex: kubectl exec -it hello-hi-k8s-master-hello-hi-k8s-hello-hi-k8s-68c47cfd9-dclks /bin/bash -n cdt-provider-engmnt-ns-01
+
+
+=> To set the namespace
+$ kubectl config set-context --current --namespace=<insert-namespace-name-here>
+ex: kubectl config set-context --current --namespace=cdt-provider-engmnt-ns-01

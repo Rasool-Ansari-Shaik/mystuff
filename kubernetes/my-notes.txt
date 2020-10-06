@@ -1,0 +1,31 @@
+Kubernetes
+============
+It frees application developers from the need to implement infrastructure-related mechanisms in their applications; instead, they rely on Kubernetes to provide them. This includes things like:
+
+service discovery - a mechanism that allows applications to find other applications and use the services they provide,
+horizontal scaling - replicating your application to adjust to fluctuations in load,
+load-balancing - distributing load across all the application replicas,
+self-healing - keeping the system healthy by automatically restarting failed applications and moving them to healthy nodes after their nodes fail,
+leader election - a mechanism that decides which instance of the application should be active while the others remain idle but ready to take over if the active instance fails.
+
+To get a concrete example of how Kubernetes is deployed onto a cluster of computers, You start with a fleet of machines that you divide into two groups - the master and the worker nodes. The master nodes will run the Kubernetes Control Plane, which represents the brain of your system and controls the cluster, while the rest will run your applications - your workloads - and will therefore represent the Workload Plane.
+
+A Kubernetes cluster consists of nodes divided into two groups:
+- A set of master nodes that host the Control Plane components, which are the brains of the system, since they control the entire cluster.
+- A set of worker nodes that form the Workload Plane, which is where your workloads (or applications) run.
+
+Control Plane components
+The Control Plane is what controls the cluster.
+- Kubernetes API Server: Rest API to create K8S object
+- etcd: distributed datastore to store object
+- Scheduler: decides on which worker node each application instance should run.
+- Controller: bring to life the objects you create through the API
+
+Workload Plane components
+The worker nodes are the computers on which your applications run.
+- Kubelet: an agent that talks to the API server and manages the applications running on its node. It reports the status of these applications and the node via the API.
+- Container Runtime: which can be Docker or any other runtime compatible with Kubernetes. It runs your applications in containers as instructed by the Kubelet.
+- Kube Proxy: load-balances network traffic between applications.
+
+Everything is an object in Kubernetes. Manifest files can be in either YAML or JSON format.
+YAML - Yet Another Markup Language

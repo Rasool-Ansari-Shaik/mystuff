@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: comm-engine
+data:
+  application.yml: |-
+    spring:
+      profiles: dev
+    comm:
+      engine:
+        message: welcome to comm_engine service
+        
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: info,health
+      endpoint:
+        info:
+          enabled: true
+        health:
+          enabled: true
+        loggers:
+          enabled: true
+        restart:
+          enabled: true
+        
+      
