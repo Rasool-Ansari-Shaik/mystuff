@@ -31,7 +31,7 @@ function login_ibmcloud() {
 	logout_ibmcloud
 	
 	echo "Login to IBM Cloud..."
-	ibmcloud login --apikey tzQ4hvSjXfamm5PSyAQY9MgP_PQukPo5nHa0vEnaUkZD
+	ibmcloud login --apikey {api-key}
 	
 	echo "Target Resource group, Organization and Space"
 	ibmcloud target -g Default -o rashaik4@in.ibm.com -s dev

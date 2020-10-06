@@ -4,8 +4,3 @@ java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 java -jar ./build/libs/kafka-java-console-sample-2.0.jar
  <kafka_brokers_sasl> <api_key> -producer
 
-
-
-
-java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-"broker-1-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-5-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-4-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-3-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-0-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-2-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093" n1V9mnm-L8BCOd82_scrYnicZRA25DJWaanpCIYkzwzD -producer
