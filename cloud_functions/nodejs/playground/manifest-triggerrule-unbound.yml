@@ -1,0 +1,30 @@
+packages:
+  hello-world-package:
+    version: 1.0
+    license: Apache 2.0
+    
+    actions:
+      hello-world-triggerrule-act:
+        function: src/hello-plus.js
+        runtime: nodejs@10
+        inputs:
+          name: string
+          place: string
+          children: integer
+          height: float
+        outputs:
+          greeting: string
+          details: string
+
+    triggers:
+      meet-person-trg:
+        inputs:
+          name: string
+          place: string
+          children: integer
+          height: float
+
+    rules:
+      meet-person-rule:
+        trigger: meet-person-trg
+        action: hello-world-triggerrule-act

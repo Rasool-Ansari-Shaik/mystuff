@@ -1,0 +1,55 @@
+packages:
+  hello-world-package:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+      hello-world:
+        function: src/hello.js
+        runtime: nodejs@10
+        inputs:
+          name: default person
+          place: default place
+      hello-world-typed-params:
+        function: src/hello-plus.js
+        inputs:
+          name: string
+          place: string
+          children: integer
+          height: float
+        outputs:
+          greeting: string
+          details: string
+      hello-world-adv-params:
+        function: src/hello-plus.js
+        inputs:
+          name: 
+            type: string
+            description: name of the person
+            default: unknown person
+          place:
+            type: string
+            description: place of living
+            default: Singarayakonda
+          children:
+            type: integer
+            description: number of children
+            value: 2
+          height:
+            type: float
+            description: height of person
+            default: 0.0
+        outputs:
+          greeting:
+            type: string
+            description: greetings to the person
+            default: hello unknown person
+          details:
+            type: string
+            description: person details
+            default: unknown details
+      hello-world-env-vars:
+        function: src/hello.js
+        runtime: nodejs@10
+        inputs:
+          name: $FIRST_NAME
+          place: ${TOWN}, ${COUNTRY}

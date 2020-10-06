@@ -1,0 +1,20 @@
+packages:
+  playground-package:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+      cf-consumer:
+        function: target/cf-consumer.jar
+        runtime: java8
+        main: com.es.consumer.ConsumerApp
+        web: true
+    triggers:
+      cf-consumer-trigger:
+        feed: es-cf-bind/messageHubFeed
+        inputs:
+          topic: topic-1
+          isJSONData: true
+    rules:
+      cf-consumer-rule:
+        trigger: cf-consumer-trigger
+        action: cf-consumer

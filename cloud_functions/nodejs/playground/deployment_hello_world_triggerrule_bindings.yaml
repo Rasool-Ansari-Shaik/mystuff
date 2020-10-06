@@ -1,0 +1,10 @@
+project:
+  packages:
+    hello_world_package:
+      triggers:
+        meet-person:
+          inputs:
+            name: Elrond
+            place: Rivendell
+            children: 3
+            height: 1.88

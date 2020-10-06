@@ -1,0 +1,206 @@
+{
+  "resourceType" : "Patient",
+  "id" : "CDMPatientInstance-CommOptOut",
+  "meta" : {
+    "extension" : [
+      {
+        "url" : "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+        "valueString" : "99999"
+      },
+      {
+        "url" : "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+        "valueString" : "b069a545-9506-40c6-8498-23de2e189143"
+      }
+    ],
+    "source" : "http://acme-health.com/epic",
+    "profile" : [
+      "http://ibm.com/fhir/cdm/StructureDefinition/cdm-patient"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: CDMPatientInstance-CommOptOut</p><p><b>meta</b>: </p><p><b>identifier</b>: Patient internal identifier = 1c1751b9-fc28-4615-b09e-f594649dc7bf (OFFICIAL), Patient internal identifier = AGn0Lb4cwwqSA579dgE1BP/IXCj+5vmsiczyCOpRglvvxzCYoYHb0XlBz0F0qmv3brA3cZ/awYRvFJT0lbEkbw== (OFFICIAL)</p><p><b>name</b>: Frasier Crane </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1955-02-21</p></div>"
+  },
+  "extension" : [
+    {
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/sex-assigned-at-birth",
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "http://ibm.com/fhir/cdm/CodeSystem/sex-assigned-at-birth-code-system",
+            "code" : "male"
+          }
+        ]
+      }
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+          "valueCodeableConcept" : {
+            "text" : "Global opt-out"
+          }
+        },
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+          "valuePeriod" : {
+            "start" : "2020-01-01T00:00:00Z"
+          }
+        }
+      ],
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+          "valueCodeableConcept" : {
+            "text" : "Opt-out for Outreach only, all modes"
+          }
+        },
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+          "valuePeriod" : {
+            "start" : "2020-01-01T00:00:00Z"
+          }
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/communication-product",
+          "valueCodeableConcept" : {
+            "text" : "outreach"
+          }
+        }
+      ],
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+          "valueCodeableConcept" : {
+            "text" : "Opt-out by mode, text only, all products"
+          }
+        },
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+          "valuePeriod" : {
+            "start" : "2020-01-01T00:00:00Z"
+          }
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/communication-mode",
+          "valueCodeableConcept" : {
+            "text" : "text"
+          }
+        }
+      ],
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+          "valueCodeableConcept" : {
+            "text" : "Opt-out for specific care-gap, all modes"
+          }
+        },
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+          "valuePeriod" : {
+            "start" : "2020-01-01T00:00:00Z"
+          }
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/communication-care-gap",
+          "valueString" : "dm-hba1c-caregap-poor-control"
+        }
+      ],
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+          "valueCodeableConcept" : {
+            "text" : "Temporary Opt-out for Outreach, email only"
+          }
+        },
+        {
+          "url" : "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+          "valuePeriod" : {
+            "start" : "2020-06-30T00:00:00Z"
+          }
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/communication-product",
+          "valueCodeableConcept" : {
+            "text" : "outreach"
+          }
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/communication-mode",
+          "valueCodeableConcept" : {
+            "text" : "text"
+          }
+        }
+      ],
+      "url" : "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+    }
+  ],
+  "identifier" : [
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/wh-cdm/StructureDefinition/encrypted-state",
+          "valueBoolean" : false
+        }
+      ],
+      "use" : "official",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "PI"
+          }
+        ]
+      },
+      "system" : "http://acme-health.com/epic/patient",
+      "value" : "1c1751b9-fc28-4615-b09e-f594649dc7bf",
+      "assigner" : {
+        "display" : "Acme Health - Epic"
+      }
+    },
+    {
+      "extension" : [
+        {
+          "url" : "http://ibm.com/fhir/wh-cdm/StructureDefinition/encrypted-state",
+          "valueBoolean" : true
+        }
+      ],
+      "use" : "official",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "PI"
+          }
+        ]
+      },
+      "system" : "http://acme-health.com/epic/patient",
+      "value" : "AGn0Lb4cwwqSA579dgE1BP/IXCj+5vmsiczyCOpRglvvxzCYoYHb0XlBz0F0qmv3brA3cZ/awYRvFJT0lbEkbw==",
+      "assigner" : {
+        "display" : "Acme Health - Epic"
+      }
+    }
+  ],
+  "name" : [
+    {
+      "family" : "Crane",
+      "given" : [
+        "Frasier"
+      ]
+    }
+  ],
+  "gender" : "male",
+  "birthDate" : "1955-02-21"
+}

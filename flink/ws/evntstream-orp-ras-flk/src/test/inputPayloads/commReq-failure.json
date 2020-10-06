@@ -1,0 +1,153 @@
+{
+    "resourceType": "CommunicationRequest",
+    "id": "b606935c-4580-4ad8-95b6-96376634d3a0",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                "valuePositiveInt": 117
+            }
+        ],
+        "versionId": "1",
+        "lastUpdated": "2020-07-23T07:29:08.307Z"
+    },
+    "extension": [
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+            "valueDecimal": 1
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+            "valueString": "example-contact"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+            "valueCoding": {
+                "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                "code": "outreach"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+            "valueCoding": {
+                "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                "code": "email"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-media",
+            "valueAttachment": {
+                "url": "http://mediafile.com/dummy-Url"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+            "valueString": "dm-hba1c-caregap-poor-control"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+            "valueString": "CARE101"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+            "valueString": "{\"toEmailAddress\":\"iftaqm55@in.ibm.com\",\"fromEmail\":\"noreply@phytel.com\",\"fromName\":\"IBM-WatsonHealth\",\"subject\":\"Health Reminder \",\"patientName\":\"John\",\"providerName\":\"Dr Debra R Kelly, MD\",\"facilityName\":\"Mediciti\",\"facilityPhoneNo\":\"808-248-8689\",\"careGapName\":\"dm-hba1c-caregap-poor-control\",\"facilityAddress\":\" Aiea Honolulu HI 96701 US\"}"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+            "valueString": "5"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+            "valueReference": {
+                "reference": "Organization/Jango"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+            "valueReference": {
+                "reference": "PractitionerRole/8d04a556-0bbf-41ae-a41f-c70865427752"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+            "valueReference": {
+                "reference": "Measure/example"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "http://www.jurisdiction.com/insurer/123456",
+            "value": "ABC123"
+        }
+    ],
+    "basedOn": [
+        {
+            "display": "EligibilityRequest"
+        }
+    ],
+    "replaces": [
+        {
+            "display": "prior CommunicationRequest"
+        }
+    ],
+    "status": "draft",
+    "statusReason": {
+        "text": "Drafted"
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://acme.org/messagetypes",
+                    "code": "SolicitedAttachmentRequest"
+                }
+            ]
+        }
+    ],
+    "priority": "routine",
+    "medium": [
+        {
+            "text": "Email"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/17a7a4b2-d192-491c-b69b-b0c1d3e60ccd"
+    },
+    "payload": [
+        {
+            "contentString": "Test"
+        }
+    ],
+    "occurrencePeriod": {
+        "start": "2020-07-23T06:00:00Z",
+        "end": "2020-07-23T10:00:00Z"
+    },
+    "authoredOn": "2020-06-14",
+    "requester": {
+        "reference": "Practitioner/82310057-968f-411e-8a80-d1dd63818f84"
+    },
+    "recipient": [
+        {
+            "reference": "Patient/17a7a4b2-d192-491c-b69b-b0c1d3e60ccd"
+        }
+    ],
+    "sender": {
+        "reference": "PractitionerRole/8d04a556-0bbf-41ae-a41f-c70865427752"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "260385009"
+                }
+            ]
+        }
+    ],
+    "reasonReference": [
+        {
+            "reference": "Observation/example"
+        }
+    ]
+}

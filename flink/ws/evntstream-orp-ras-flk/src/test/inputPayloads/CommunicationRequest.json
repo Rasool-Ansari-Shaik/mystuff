@@ -1,0 +1,166 @@
+{
+  "resourceType": "CommunicationRequest",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+        "valuePositiveInt": 1
+      }
+    ],
+    "source": "http://ibm.com/fhir/engagement",
+    "profile": [
+      "http://ibm.com/fhir/cdm/StructureDefinition/eng-communication-request"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+      "valueCoding": {
+        "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+        "code": "ihe"
+      }
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+      "valueReference": {
+        "reference": "PractitionerRole/8d04a556-0bbf-41ae-a41f-c70865427752"
+      }
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+      "valueString": "caregap-dm-hba1c"
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+      "valueDecimal": 1
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+      "valueString": "808-248-8689"
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+      "valueCoding": {
+        "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+        "code": "text"
+      }
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+      "valueString": "template-dm"
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+      "valueString": "5"
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+      "valueString": "{\"ShortCode\":\"888-111\",\"EmailSubject\":\"Test Email Subject\",\"FromPhoneNumber\":\"614-564-7865\",\"CallTransferPhoneNumber\":\"614-564-7867\"}"
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+      "valueReference": {
+        "reference": "Organization/Genesis"
+      }
+    },
+    {
+      "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-media",
+      "valueAttachment": {
+        "url": "http://mediafile.com/dummy-Url"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "use": "official",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "RI",
+            "display": "Resource Identifier"
+          }
+        ]
+      },
+      "system": "http://ibm.com/fhir/cdm/engagement-communication-request",
+      "value": "9f13ae8e-460c-4a62-89c8-19f949fd6bcd",
+      "assigner": {
+        "display": "IBM Watson Health Engagement"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "CarePlan/403d180e1bd0"
+    }
+  ],
+  "status": "draft",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+          "code": "notification",
+          "display": "Notification"
+        }
+      ]
+    }
+  ],
+  "priority": "routine",
+  "subject": {
+    "reference": "Patient/17a7a4b2-d192-491c-b69b-b0c1d3e60ccd"
+  },
+  "payload": [
+    {
+      "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+    }
+  ],
+  "occurrencePeriod": {
+    "start": "2020-06-30T08:50:24Z",
+    "end": "2020-06-30T13:50:24Z"
+  },
+  "authoredOn": "2020-06-30T08:50:24Z",
+  "requester": {
+    "reference": "Organization/87cfb17873a5"
+  },
+  "recipient": [
+    {
+      "reference": "Group/87cfb17873a4"
+    }
+  ],
+  "sender": {
+    "reference": "Organization/c6924d19ef47"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "73211009",
+          "display": "Diabetes mellitus (disorder)"
+        }
+      ],
+      "text": "DM"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "#59621000",
+          "display": "Essential hypertension (disorder)"
+        }
+      ],
+      "text": "HTN"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "#195967001",
+          "display": "Asthma (disorder)"
+        }
+      ],
+      "text": "ASTH"
+    }
+  ]
+}

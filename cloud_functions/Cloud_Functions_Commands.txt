@@ -1,0 +1,158 @@
+ibmcloud fn action create HelloFn --docker openwhisk/action-dotnet-v3.1 HelloDotNet.zip --main Apache.OpenWhisk.Example.Dotnet::Apache.OpenWhisk.Example.Dotnet.Hello::Main
+
+ibmcloud fn action create capitalize target\hello-0.0.1-SNAPSHOT.jar --main hello.Capitialize --docker openwhisk/java8action
+
+ibmcloud fn action invoke --result capitalize --param name World
+
+ibmcloud fn action invoke capitalize -b -r -p message "this is a sentence"
+
+ibmcloud fn action create hello target\hello-0.0.1-SNAPSHOT.jar --main hello.Hello --docker openwhisk/java8action
+
+ibmcloud fn action invoke --result hello --param name World
+
+ibmcloud fn activation poll  --> Polling for activation logs
+ 
+https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-logs
+
+https://github.com/apache/openwhisk-runtime-java
+
+https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-prep#prep_docker
+
+https://openwhisk.apache.org/
+
+http://jamesthom.as/blog/2019/02/05/large-java-applications-on-openwhisk/
+
+https://medium.com/@doh_88292/how-to-develop-functions-as-a-service-with-apache-openwhisk-996a9bf8716b
+
+https://cloud.spring.io/spring-cloud-function/reference/html/openwhisk.html
+
+https://github.com/spring-cloud/spring-cloud-function/tree/master/spring-cloud-function-samples
+
+https://github.com/apache/openwhisk-devtools/tree/master/maven-java
+
+https://github.com/apache/openwhisk-devtools
+
+ibmcloud fn deploy --manifest manifest.yaml
+
+
+docker build -t hello:t1 .
+docker tag hello:t1 rasool007kutty/hello
+docker push rasool007kutty/hello
+ibmcloud fn action create capitialize target\hello-0.0.1-SNAPSHOT.jar --main hello.Capitialize --docker rasool007kutty/hello
+
+
+ibmcloud fn action create hello target/hello-0.0.1-SNAPSHOT.jar --main hello.Hello --docker openwhisk/java8action
+
+mvnw.cmd clean install
+ibmcloud login -a https://cloud.ibm.com -u passcode -p MKlenxgiE7
+ibmcloud target -g Default -o rashaik4@in.ibm.com -s dev
+ibmcloud fn -i action create md5hasher target/maven-java.jar --main org.apache.openwhisk.example.maven.App
+ibmcloud fn -i action invoke md5hasher --result -p text openwhisk
+
+curl --request POST \
+  --url http://localhost:8080/run \
+  --header 'Cache-Control: no-cache' \
+  --header 'Content-Type: application/json' \
+  --data '{ "value": {"parameter1":"Niklas","parameter2":"Heidloff"}}'
+
+? how to call an action from another action without putting them in the same sequence...
+you can use conductor actions (https://github.com/apache/openwhisk/blob/master/docs/conductors.md) or composer (https://github.com/apache/openwhisk-composer) for this
+
+Spring boot cloud functions (Out of scope)
+============================
+https://github.com/nheidloff/openwhisk-debug-java
+http://heidloff.net/article/openwhisk-spring-boot-eclipse
+ibmcloud fn action create actionDockerSpring --docker rasool007kutty/openwhisk-docker-spring-boot:latest
+ibmcloud fn action invoke --blocking actionDockerSpring --param-file parameters.json
+
+Spring Cloud Functions
+=======================
+https://cloud.spring.io/spring-cloud-function/reference/html/openwhisk.html
+https://github.com/spring-cloud/spring-cloud-function
+https://cloud.spring.io/spring-cloud-function/multi/multi__serverless_platform_adapters.html
+docker build -t scf-demo-v1:latest .
+docker tag scf-demo-v1:latest rasool007kutty/scf-demo-v1
+docker push rasool007kutty/scf-demo-v1
+ibmcloud fn -i action create scf-uppercase --docker rasool007kutty/scf-demo-v1
+ibmcloud fn action invoke scf-uppercase --result --param payload foo
+
+ibmcloud fn package create CommEngine
+ibmcloud fn action create CommEngine/ReadMessage src/hello.js
+
+https://github.com/apache/openwhisk-wskdeploy/tree/master/specification#package-specification
+https://github.com/apache/openwhisk-wskdeploy/blob/master/docs/programming_guide.md#wskdeploy-utility-by-example
+https://github.com/apache/openwhisk-wskdeploy/blob/master/specification/html/spec_actions.md#actions
+
+https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-limits
+
+
+*******
+ibmcloud fn action invoke hello-world-package/hello-world -b -r -p name Rasool place Singarayakonda
+ibmcloud fn action invoke hello-world-package/hello-world -b -r -p {"name": "Rasool", "place": "Singarayakonda"}
+ibmcloud fn action invoke hello-world-package/hello-world -b -r -p name Rasool
+ibmcloud fn action invoke hello-world-package/hello-world -b -r -p {"name": "Rasool"}
+ibmcloud fn --h
+ibmcloud fn --help
+ibmcloud cloud-functions
+ibmcloud cloud-functions --help
+ibmcloud cloud-functions action --help
+ibmcloud cloud-functions action invoke --help
+ibmcloud fn action invoke --help
+ibmcloud fn action invoke hello-world-package/hello-world -b -r
+ibmcloud fn action invoke hello-world-package/hello-world -b -r -P person.json
+ibmcloud fn deploy -p C:\Users\RasoolAnsariShaik\_1\my stuff\Learn\cloud_functions\nodejs\playground
+ibmcloud fn action list
+ibmcloud fn action invoke hello-world-package/hello-world -b -r
+ibmcloud fn deploy -p C:\Users\RasoolAnsariShaik\_1\my stuff\Learn\cloud_functions\nodejs\playground
+ibmcloud fn package action list
+ibmcloud fn action list
+ibmcloud fn action invoke hello-world-package/hello-world-typed-params -b -r
+ibmcloud fn deploy -p C:\Users\RasoolAnsariShaik\_1\my stuff\Learn\cloud_functions\nodejs\playground
+ibmcloud fn action list
+ibmcloud fn action invoke hello-world-package/hello-world-adv-params -b -r
+set FIRST_NAME=Rasool TOWN=Singarayakonda COUNTRY=India
+ibmcloud fn deploy -p C:\Users\RasoolAnsariShaik\_1\my stuff\Learn\cloud_functions\nodejs\playground
+ibmcloud fn action list
+ibmcloud fn action invoke hello-world-package/hello-world-env-vars -b -r
+set FIRST_NAME=Rasool Ansari Shaik
+set TOWN=Singarayakonda
+set COUNTRY=India
+ibmcloud fn action invoke hello-world-package/hello-world-env-vars -b -r
+echo %TOWN%
+echo %FIRST_NAME%
+ibmcloud fn action invoke hello-world-package/hello-world-env-vars -b -r
+set FIRST_NAME=Rasool Ansari Shaik
+set TOWN=Singarayakonda
+set COUNTRY=India
+ibmcloud fn action invoke hello-world-package/hello-world-env-vars -b -r
+ibmcloud fn deploy -p C:\Users\RasoolAnsariShaik\_1\my stuff\Learn\cloud_functions\nodejs\playground
+ibmcloud fn action list
+ibmcloud fn action invoke hello-world-package/hello-world-env-vars -b -r
+ibmcloud fn package --help
+ibmcloud fn package create --help
+ibmcloud fn package create CommEngine
+ibmcloud fn action create CommEngine/ReadMessage --main src/hello.js
+ibmcloud fn action create --help
+ibmcloud fn action create CommEngine/ReadMessage src/hello.js
+ibmcloud fn action list
+ibmcloud fn package list
+doskey /history
+*******
+
+
+ibmcloud fn undeploy  --> Used to remove partially deployed assets
+
+web actions -> https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-actions_web
+Cloud function annotations -> https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-annotations
+
+**** uber jar openwhisk deployment ****
+http://jamesthom.as/blog/2019/02/05/large-java-applications-on-openwhisk/
+https://www.ibm.com/cloud/blog/building-openwhisk-actions-java-gradle
+https://github.com/serverless/serverless-openwhisk/blob/master/README.md --> Important
+https://openwhisk.apache.org/documentation.html
+https://serverless.com/framework/docs/providers/openwhisk/guide/intro/ --> Important
+**** uber jar openwhisk deployment ****
+
+Create Sequence
+ibmcloud fn action create --sequence <sequence_name> <action_1>,<action_2>
+ibmcloud fn action invoke --sequence <sequence_name> -P <file_name>

@@ -1,0 +1,346 @@
+{
+    "resourceType": "Patient",
+    "id": "32dd79c6-b361-4627-9172-22ff4b2e7fe8",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                "valueString": "99999"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                "valueString": "IBM"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                "valueString": "Matching"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                "valueString": "Patient Matching"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                "valueString": "1.0"
+            },
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                "valueDateTime": "2020-02-12T03:01:00Z"
+            }
+        ],
+        "versionId": "3",
+        "lastUpdated": "2020-09-11T09:01:28.591Z",
+        "source": "http://ibm.com/fhir/patient-master-index",
+        "profile": [
+            "http://ibm.com/fhir/cdm/StructureDefinition/cdm-match-patient"
+        ],
+        "tag": [
+            {
+                "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                "code": "SECONDARY"
+            }
+        ]
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: MatchedPatientExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = c82a8fce-11db-4396-b10c-1150abd1a222 (OFFICIAL)</p><p><b>name</b>: Maggie Match </p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1990-01-04</p></div>"
+    },
+    "extension": [
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/sex-assigned-at-birth",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://ibm.com/fhir/cdm/CodeSystem/sex-assigned-at-birth-code-system",
+                        "code": "female"
+                    }
+                ]
+            }
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/source-reference",
+                    "valueReference": {
+                        "reference": "Patient/MatchedPatientSource-Cerner1"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-level",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/identity-assuranceLevel",
+                        "code": "level4",
+                        "display": "Level 4"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-score",
+                    "valueDecimal": 100
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/match-method",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://ibm.com/fhir/cdm/CodeSystem/match-method-code-system",
+                                "code": "automated"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2020-02-12"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                    "valueString": "IBM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                    "valueString": "Patient Match"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                    "valueString": "MDM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                    "valueString": "1.0"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                    "valueDateTime": "2020-01-01T03:01:00Z"
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/see-also"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/source-reference",
+                    "valueReference": {
+                        "reference": "Patient/MatchedPatientSource-Cerner2"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-level",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/identity-assuranceLevel",
+                        "code": "level4",
+                        "display": "Level 4"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-score",
+                    "valueDecimal": 100
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/match-method",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://ibm.com/fhir/cdm/CodeSystem/match-method-code-system",
+                                "code": "automated"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2020-02-12"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                    "valueString": "IBM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                    "valueString": "Patient Match"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                    "valueString": "MDM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                    "valueString": "1.0"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                    "valueDateTime": "2020-01-01T03:01:00Z"
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/see-also"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/source-reference",
+                    "valueReference": {
+                        "reference": "Patient/MatchedPatientSource-Epic"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-level",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/identity-assuranceLevel",
+                        "code": "level4",
+                        "display": "Level 4"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-score",
+                    "valueDecimal": 100
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/match-method",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://ibm.com/fhir/cdm/CodeSystem/match-method-code-system",
+                                "code": "manual"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2020-04-18"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                    "valueString": "IBM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                    "valueString": "Manual Patient Match"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                    "valueString": "Web Portal"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                    "valueString": "1.0"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                    "valueDateTime": "2020-04-18T10:35:01Z"
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/see-also"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/source-reference",
+                    "valueReference": {
+                        "reference": "Patient/MatchedPatientSource-NextGen"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-level",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/identity-assuranceLevel",
+                        "code": "level2",
+                        "display": "Level 2"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/confidence-score",
+                    "valueDecimal": 50
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/match-method",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://ibm.com/fhir/cdm/CodeSystem/match-method-code-system",
+                                "code": "automated"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2020-04-14",
+                        "end": "2020-04-18"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/split-method",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://ibm.com/fhir/cdm/CodeSystem/match-method-code-system",
+                                "code": "manual"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                    "valueString": "IBM"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                    "valueString": "Manual Patient Split"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                    "valueString": "Web Portal"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                    "valueString": "1.0"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                    "valueDateTime": "2020-04-18T10:36:02Z"
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/see-also"
+        }
+    ],
+    "identifier": [
+        {
+            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "RI",
+                        "display": "Resource Identifier"
+                    }
+                ]
+            },
+            "system": "http://ibm.com/fhir/ABC/cdm-patient-master-index",
+            "value": "c82a8fce-11db-4396-b10c-1150abd1a222",
+            "assigner": {
+                "display": "IBM"
+            }
+        }
+    ],
+    "name": [
+        {
+            "family": "Match",
+            "given": [
+                "Maggie"
+            ]
+        }
+    ],
+    "gender": "female",
+    "birthDate": "1990-01-04"
+}

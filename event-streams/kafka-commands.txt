@@ -1,0 +1,51 @@
+Kafka Commands
+=================
+Reference: https://dzone.com/articles/running-apache-kafka-on-windows-os
+
+1) Start Zookeeper
+C:\kafka>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+2) Stop Zookeeper
+C:\kafka>bin\windows\zookeeper-server-stop.bat
+
+3) Start Kafka
+C:\kafka>bin\windows\kafka-server-start.bat config\server.properties
+
+4) Stop Kafka
+C:\kafka>bin\windows\kafka-server-stop.bat
+
+5) Create Topic
+C:\kafka>bin\windows\kafka-topics.bat --create --replication-factor 1 --partitions 1 --topic test --zookeeper localhost:2181
+
+6) List Topics
+C:\kafka>bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+7) Describe Topic
+C:\kafka>bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
+
+8) Delete a Topic
+-> Way-1:
+C:\kafka>bin\windows\kafka-topics.bat --delete --zookeeper localhost:2181 --topic test
+Note: Before executing the above command, set delete.topic.enable to true in server.properties
+Otherwise you need to manually remove the topic.
+
+-> Way-2:
+Stop Kafka server if running after executing above command
+Delete folder with name "test*" in kafka-logs directory. (Not required)
+Execute command -
+C:\kafka\bin\windows>zookeeper-shell.bat localhost:2181
+get /brokers/topics/test
+deleteall /brokers/topics/test
+deleteall /admin/delete_topics/test
+
+Reference: https://stackoverflow.com/questions/33537950/how-to-delete-a-topic-in-apache-kafka
+https://medium.com/@contactsunny/manually-delete-apache-kafka-topics-424c7e016ff3
+
+9) Start Console Producer
+C:\kafka>bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+10) Start Console Consumer
+C:\kafka>bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test
+
+11) Read Messages from Begining
+C:\kafka>bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning

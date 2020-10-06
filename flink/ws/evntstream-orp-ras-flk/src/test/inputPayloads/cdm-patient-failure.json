@@ -1,0 +1,304 @@
+{
+    "resourceType": "Patient",
+    "id": "0c824bd7-67a7-4fc1-a10d-455ef634f95e",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                "valueString": "1"
+            }
+        ],
+        "versionId": "3",
+        "lastUpdated": "2020-09-01T12:15:41.762Z",
+        "source": "http://acme-health.com/epic",
+        "profile": [
+            "http://ibm.com/fhir/cdm/StructureDefinition/cdm-patient"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/primary-payor",
+            "valueReference": {
+                "reference": "Organization/123"
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/secondary-payor",
+            "valueReference": {
+                "reference": "Organization/456"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "valueCode": "M"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+                    "valueCodeableConcept": {
+                        "text": "Global opt-out"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+                    "valuePeriod": {
+                        "start": "2020-08-26T00:00:00Z"
+                    }
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/stated-reason",
+                    "valueCodeableConcept": {
+                        "text": "Opt-out for Outreach only, all modes"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/effective-period",
+                    "valuePeriod": {
+                        "start": "2021-08-31T00:00:00Z"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/communication-product",
+                    "valueCodeableConcept": {
+                        "text": "outreach"
+                    }
+                }
+            ],
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-opt-out"
+        },
+        {
+            "extension": [
+                {
+                    "url": "ombCategory",
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2106-3",
+                        "display": "White"
+                    }
+                },
+                {
+                    "url": "detailed",
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2116-2",
+                        "display": "Scottish"
+                    }
+                },
+                {
+                    "url": "detailed",
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2112-1",
+                        "display": "German"
+                    }
+                },
+                {
+                    "url": "text",
+                    "valueString": "White"
+                }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+        },
+        {
+            "extension": [
+                {
+                    "url": "ombCategory",
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2135-2",
+                        "display": "Hispanic or Latino"
+                    }
+                },
+                {
+                    "url": "detailed",
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2157-6",
+                        "display": "Guatemalan"
+                    }
+                },
+                {
+                    "url": "text",
+                    "valueString": "Hispanic or Latino"
+                }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/status-code",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://ibm.com/fhir/cdm/CodeSystem/patient-status-code-system",
+                        "code": "active",
+                        "display": "active"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "http://ibm.com/fhir/cdm/StructureDefinition/family-id",
+            "valueString": "DummyFamilyId"
+        }
+    ],
+    "identifier": [
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/encrypted-state",
+                    "valueBoolean": false
+                }
+            ],
+            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "RI",
+                        "display": "Resource Identifier"
+                    }
+                ]
+            },
+            "system": "http://acme-health.com/epic/patient",
+            "value": "9f13ae8e-460c-4a62-89c8-19f949fd6bcd",
+            "assigner": {
+                "display": "Acme Health - Epic Qa Test"
+            }
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+            "text": "Alex",
+            "family": "V Banner",
+            "given": [
+                "Alex",
+                "V Banner"
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                    "valueString": "1"
+                }
+            ],
+            "system": "email",
+            "value": "iftaqm55@in.ibm.com",
+            "use": "work",
+            "rank": 1
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-country",
+                    "valueString": "1"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/contactpoint-extension",
+                    "valueString": "4321"
+                }
+            ],
+            "system": "sms",
+            "value": "14694273926",
+            "use": "work",
+            "rank": 2
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1983-04-23",
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/county-code",
+                    "valueString": "48009"
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/region-code",
+                    "valueString": "01"
+                }
+            ],
+            "use": "home",
+            "type": "physical",
+            "line": [
+                "98-1079 Moanolua",
+                "Suite 200"
+            ],
+            "city": "Aiea",
+            "district": "Honolulu",
+            "state": "HI",
+            "postalCode": "96701",
+            "country": "US"
+        }
+    ],
+    "communication": [
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/language-rank",
+                    "valuePositiveInt": 1
+                }
+            ],
+            "language": {
+                "coding": [
+                    {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "en",
+                        "display": "English"
+                    }
+                ]
+            }
+        }
+    ],
+    "generalPractitioner": [
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-code",
+                    "valueCoding": {
+                        "system": "http://ibm.com/fhir/cdm/CodeSystem/attribution-code-system",
+                        "code": "client-emr-pcp",
+                        "display": "Client EMR PCP"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2018-01-01",
+                        "end": "2020-12-31"
+                    }
+                }
+            ],
+            "reference": "PractitionerRole/8d04a556-0bbf-41ae-a41f-c70865427752"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-code",
+                    "valueCoding": {
+                        "system": "http://ibm.com/fhir/cdm/CodeSystem/attribution-code-system",
+                        "code": "eng-attr-pcp",
+                        "display": "Engagement Attributed PCP"
+                    }
+                },
+                {
+                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/reference-period",
+                    "valuePeriod": {
+                        "start": "2019-01-01",
+                        "end": "2019-12-31"
+                    }
+                }
+            ],
+            "reference": "PractitionerRole/8d04a556-0bbf-41ae-a41f-c70865427752"
+        }
+    ]
+}

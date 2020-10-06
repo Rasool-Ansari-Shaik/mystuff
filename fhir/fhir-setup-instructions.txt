@@ -1,0 +1,14 @@
+FHIR Setup
+===========
+Download fhir-server-distribution.zip https://github.com/IBM/FHIR/releases/tag/4.0.1
+Save under fhir/target/fhir-server-distribution.zip
+Save docker file under fhir/DockerFile docker build -t fhir-server .
+docker run -it -p 9443:9443 --name fhir-server --rm fhir-server
+"fhiruser:change-password"
+https://localhost:9443/fhir-server/api/v4/$healthcheck
+curl -k -u "fhiruser:change-password" "https://localhost:9443/fhir-server/api/v4/$healthcheck"
+
+
+https://pages.github.ibm.com/IBM-WH-ENGMNT/common-fhir-ig/artifacts.html
+
+

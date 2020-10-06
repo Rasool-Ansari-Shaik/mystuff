@@ -1,0 +1,19 @@
+> To build images
+docker build -t <image-name>:<tag> .
+ex: docker build -t rk-imessage:latest .
+
+> To list images
+docker images
+
+> To list containers
+docker ps
+
+> To delete images
+docker stop <containerid>
+docker rm <containerid>
+docker rmi <imageid>
+Reference: https://stackoverflow.com/questions/21398087/how-can-i-delete-dockers-images
+
+> How to connect to docker container
+docker exec -it <container name> /bin/bash
+

@@ -1,0 +1,96 @@
+Flink
+==========
+Low Latency
+Low latency describes a computer network that is optimized to process a very high volume of data messages with minimal delay (latency).
+
+Fault Tolerance
+Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components.
+Fault tolerance refers to the ability of a system (computer, network, cloud cluster, etc.) to continue operating without interruption when one or more of its components fail.
+Fault Tolerance simply means a system's ability to continue operating uninterrupted despite the failure of one or more of its components.
+
+Throughput
+Throughput refers to how much data can be transferred from one location to another in a given amount of time.
+Refer: https://techterms.com/definition/throughput
+
+Latency vs Throughput 
+Latency indicates how long it takes for packets to reach their destination. Throughput is the term given to the number of packets that are processed within a specific period of time. Throughput and latency have a direct relationship in the way they work within a network.
+
+
+Batch Processing 
+A set of data collected over a period of time and then processed at a single shot.
+Usecase: Diff in sales after discount, find loyal customers of a bank
+A batch job is run at regular interval of time or on demand basis
+More concerned about throughput than latency
+ex: Hadoop
+
+Stream Processing
+Data is fed to processing engine as sson as it generated
+Usecase: Fraud detection, Social media sentiment analysis
+A streaming job runs continuosly whenever data is available
+More concerned about Latency
+ex: Spark, Flink
+
+Hadoop
+- Batch processing
+- Store intermediate mapper output to DISK
+- Less api support
+- No abstraction
+
+Spark & Flink
+- Stream Processing
+- In memory operations
+- Easy to program using api
+- Spark - RDD
+  Flink - Data flows
+***********************************
+
+Spark
+- not a true real time processing. near to real time processing.
+- at heart, spark is a batch processing framework
+- streaming computation model is based on Microbatching
+- implemented in scala
+- execution engine: DAG
+
+Flink
+- true real time processing
+- at heart, flink is a stream processing framework
+- streaming computation model is based on windowing and checkpointing
+- implemented in java
+- execution engine: Controlled Cyclic Dependency graph
+
+*************************************
+Source: is the data source from where we get the data for processing (ex: Kafka)
+Sink: is the place where we dump the processed data (ex: memory)
+Abstractions: Dataset and Datastream
+Dataset - is immutable
+
+*************************************
+Default Code Structure
+Dataset
+- ExecutionEnvironment env = ExecutionEnvironment.createLocalEnvironment();
+// Set up the execution environment. If the program running in IDE, it is Local env. If it is running in Cluster, it is cluster env
+- ParameterTool params = ParameterTool.fromArgs(args);
+// Read arguments passed to the job (program)
+- env.getConfig().setGlobalJobParameters(params);
+// Set the params (arguments) as global job params to make them available in the environment
+Datastream
+- StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+- ParameterTool params = ParameterTool.fromArgs(args);
+- env.getConfig().setGlobalJobParameters(params);
+***************************************
+
+DataSet Transformations
+- filter, map, flatMap, groupBy, sum
+
+readTextFile(path) - reads file line wise and returns them as dataset of strings
+readCsvFile(path) - reads a csv file and returns a dataset of tuples. Max tuple size 25
+readFileOfPrimitives(path, class) - reads each line of file in the form of class mentioned in arguments
+readFileOfPrimitives(path, delimiter, class) - reads each line of file in the form of class mentioned in arguments using delimiter
+
+Joins - InnerJoin, LeftOuterJoin, RightOuterJoin, FullOuterJoin
+JoinHint - Optimizer_Chooses, Broadcast_Hash_First, Broadcast_Hash_Second, Repartition_Hash_First, Repartition_Hash_Second, Repartition_Sort_Merge
+
+DAG - Directly Asyclic Graph
+flink> /bin/flink run path-to-jar/abc.jar
+- Then we can see the job running in Flink dashboard localhost:8081
+

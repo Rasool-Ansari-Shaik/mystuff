@@ -1,0 +1,17 @@
+packages:
+  hello-world-package:
+    version: 1.0
+    license: Apache-2.0
+
+    actions:
+      hello-world:
+        function: src/hello.js
+        web-export: true
+
+    apis:
+      hello-world-api:
+        hello:
+          world:
+            hello-world:
+              method: GET
+

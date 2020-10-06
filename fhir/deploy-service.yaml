@@ -1,0 +1,35 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fhir-server-with-derby-ras
+spec:
+  selector:
+    app: fhir-server-with-derby-ras
+  ports:
+  - protocol: TCP
+    port: 9443
+    nodePort: 30085
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fhir-server-with-derby-ras
+spec:
+  selector:
+      matchLabels:
+        app: fhir-server-with-derby-ras
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fhir-server-with-derby-ras
+    spec:
+      imagePullSecrets:
+        - name: default-us-icr-io
+      containers:
+        - name: fhir-server-with-derby-ras
+          image: "us.icr.io/cdt-provider-engmnt-rns/fhir-server-with-derby:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9443

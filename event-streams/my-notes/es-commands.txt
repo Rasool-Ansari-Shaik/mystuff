@@ -1,0 +1,30 @@
+# To install event streams pligin (es)
+ibmcloud plugin install event-streams
+
+# Initialize the event streams plugin
+ibmcloud es init
+
+# Create an Event Streams instance
+ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
+
+# Create a service API key for this instance
+ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
+
+# Delete Event Stream
+ibmcloud resource service-instance-delete es-44-4d --force --recursive
+
+# To get the details of event streams ex: plans available
+ibmcloud catalog service messagehub
+
+# To get the list of roles supported to create apikey for event streams
+ibmcloud iam roles --service messagehub
+
+# To find the list of resource service instances created
+ibmcloud resource service-instances
+
+# To Create Event Stream using shell script
+./event-streams.sh --create --name es-44-4d --plan lite -r us-south -a es-44-4d-key -o Manager
+
+# To Delete Event Stream
+$ ./event-streams.sh --delete --name es-44-4d
+

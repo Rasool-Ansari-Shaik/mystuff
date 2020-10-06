@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fhir-http-derby-audit-ras
+spec:
+  selector:
+    matchLabels:
+      app: fhir-http-derby-audit-ras
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fhir-http-derby-audit-ras
+    spec:
+      imagePullSecrets:
+        - name: default-us-icr-io
+      containers:
+        - name: fhir-http-derby-audit-ras
+          image: "us.icr.io/cdt-provider-engmnt-rns/fhir-http-derby-audit-ras:v1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9443      
+        - env:
+            - name: EVENT_STREAMS_AUDIT_BINDING
+              valueFrom:
+                secretKeyRef:
+                  key: binding
+                  name: binding-event-streams-modernization

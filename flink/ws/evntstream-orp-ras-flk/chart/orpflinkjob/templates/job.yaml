@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart:  {{ .Chart.Name }}-{{  .Chart.Version | replace "+" "_"  }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    TOOLCHAIN_ID: {{ .Values.annotations.TOOLCHAIN_ID }}
+    GIT_URL: {{ .Values.annotations.GIT_URL }}
+    GIT_BRANCH: {{ .Values.annotations.GIT_BRANCH }}
+    GIT_COMMIT: {{ .Values.annotations.GIT_COMMIT }}
+    USER_NAME: {{ .Values.annotations.USER_NAME }}
+    APPLICATION_VERSION: {{ .Values.annotations.APPLICATION_VERSION}}
+spec:
+  backoffLimit: {{ .Values.restartOnFailureLimit }}
+  template:
+    metadata:
+      name: {{ template "fullname" . }}
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+#          env:
+#            - name: EVENT_STREAMS_CRED_ENV_VAR
+#              valueFrom:
+#                secretKeyRef:
+#                  name: event-stream-credentials
+#                  key: password
+#            
+#            - name: FHIR_SERVER_PWD_ENV_VAR
+#              valueFrom:
+#                secretKeyRef:
+#                  name: fhir-server-secret
+#                  key: password
+#                  
+#            - name: DB2_PWD_ENV_VAR
+#              valueFrom:
+#                secretKeyRef:
+#                  name: db2-secret
+#                  key: password      
+          command:
+            - "/bin/bash"
+            - {{ .Values.workload.command | quote }}
+      restartPolicy: Never
+      nodeSelector:
+        worker-type: application

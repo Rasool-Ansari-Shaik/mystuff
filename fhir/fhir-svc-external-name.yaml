@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fhir-server-fhir-server-fhir-server
+  namespace: centaur-dev
+spec:
+  type: ExternalName
+  externalName: fhir-server-fhir-server-fhir-server.ragnok-dev.svc.cluster.local
+  ports:
+  - port: 9080

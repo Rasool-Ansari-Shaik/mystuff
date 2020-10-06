@@ -1,0 +1,179 @@
+{
+    "resourceType": "Bundle",
+    "id": "3f89e14f-61bc-40a9-a39f-e17fcec90f99",
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:9080/fhir-server/api/v4/Communication/?_count=1&care-gap-id=caregap-dm-hba1z&subject=Patient/a14961ba-6dab-4e68-85d2-7479ff6632d4&_sort=-received&_page=1"
+        }
+    ],
+    
+    "entry": [
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/17425c0735d-e354f162-8bed-4570-8ec6-cdbab61ef98b",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "17425c0735d-e354f162-8bed-4570-8ec6-cdbab61ef98b",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "117"
+                        }
+                    ],
+                    "versionId": "3",
+                    "lastUpdated": "2020-08-28T06:45:22.138Z",
+                    "source": "http://ibm.com//fhir/wh-engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/wh-engagement/StructureDefinition/eng-communication"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/wh-engagement/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/60445fd79794"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "caregap-dm-hba1z"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-contact",
+                        "valueString": "808-248-8689"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/wh-engagement/CodeSystem/eng-communication-mode-code-system",
+                            "code": "text"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-template",
+                        "valueString": "template-dm"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-payload-data",
+                        "valueString": "{\"ShortCode\":\"888-111\",\"EmailSubject\":\"Test Email Subject\",\"FromPhoneNumber\":\"614-564-7865\",\"CallTransferPhoneNumber\":\"614-564-7865\"}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/wh-engagement/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/wh-engagement/communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM Watson Health - Engagement"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/403d180e1bd0"
+                    }
+                ],
+                "status": "stopped",
+                
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/a14961ba-6dab-4e68-85d2-7479ff6632d4"
+                },
+                "about": [
+                    {
+                        "reference": "CarePlan/e5d129aef2b7c5"
+                    }
+                ],
+                "received": "2020-09-23T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/a14961ba-6dab-4e68-85d2-7479ff6632d4"
+                    }
+                ],
+                "sender": {
+                    "reference": "Patient/a14961ba-6dab-4e68-85d2-7479ff6632d4"
+                },
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/sid/icd-10",
+                                "code": "E11",
+                                "display": "Type 2 diabetes mellitus"
+                            }
+                        ],
+                        "text": "DM"
+                    },
+                    {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/sid/icd-10",
+                                "code": "I10",
+                                "display": "Essential Hypertension"
+                            }
+                        ],
+                        "text": "HTN"
+                    },
+                    {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/sid/icd-10",
+                                "code": "J45",
+                                "display": "Asthma"
+                            }
+                        ],
+                        "text": "ASTH"
+                    }
+                ],
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        }
+    ]
+}

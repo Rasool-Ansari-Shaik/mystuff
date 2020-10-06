@@ -1,0 +1,10 @@
+packages:
+  es-package-bind:
+    dependencies:
+      es-cf-bind:
+        location: /whisk.system/messaging
+        inputs:
+          user: token
+          password: -TZW20TMtDuIzwP6XhfxlfOzFjGP_-Kt0w6Z5t0n805t
+          kafka_admin_url: https://crgfnvrblwxzj9gp.svc03.us-south.eventstreams.cloud.ibm.com
+          kafka_brokers_sasl: ["broker-5-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093","broker-3-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093","broker-1-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093","broker-2-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093","broker-4-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093","broker-0-crgfnvrblwxzj9gp.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093"]

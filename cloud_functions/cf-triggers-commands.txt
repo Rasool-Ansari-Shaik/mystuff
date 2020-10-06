@@ -1,0 +1,10 @@
+Reference: https://cloud.ibm.com/apidocs/functions?code=node#fire-a-trigger
+
+To get all triggers in namespace:
+curl -u 8849b664-46cd-4f5c-9e6b-dc94eed3e407:X1jixJ74O7LgoZ1CEvl4hdOoU2hdGMMh9hUoUEqDMQgPlvaMDrKThDCzjANGtYTh -X GET https://us-south.functions.cloud.ibm.com/api/v1/namespaces/rashaik4@in.ibm.com_dev/triggers?limit=0&skip=0
+
+To get the details of a trigger in a namespace:
+curl -u 8849b664-46cd-4f5c-9e6b-dc94eed3e407:X1jixJ74O7LgoZ1CEvl4hdOoU2hdGMMh9hUoUEqDMQgPlvaMDrKThDCzjANGtYTh -X GET https://us-south.functions.cloud.ibm.com/api/v1/namespaces/rashaik4@in.ibm.com_dev/triggers/cf-consumer-trigger?limit=0&skip=0
+
+To fire/invoke a trigger in a namespace:
+curl -u 8849b664-46cd-4f5c-9e6b-dc94eed3e407:X1jixJ74O7LgoZ1CEvl4hdOoU2hdGMMh9hUoUEqDMQgPlvaMDrKThDCzjANGtYTh -X POST https://us-south.functions.cloud.ibm.com/api/v1/namespaces/rashaik4@in.ibm.com_dev/triggers/cf-consumer-trigger?limit=0&skip=0

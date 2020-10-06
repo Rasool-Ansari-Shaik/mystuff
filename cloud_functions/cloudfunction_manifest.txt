@@ -1,0 +1,71 @@
+manifest.yaml
+--------------
+packages:
+	hello-world-package:
+		version: 1.0
+		license: Apache-2.0
+		actions:
+			hello-world:
+				function: src/hello.js
+				runtime: nodejs@10
+				inputs:
+					name: Rasool
+					place: Singarayakonda
+			hello-world-typed-params:
+				function: src/hello-plus.js
+				inputs:
+					name: string
+					place: string
+					children: integer
+					height: float
+				outputs:
+					greeting: string
+					details: string
+			hello-world-advanced-params:
+				function: src/hello-plus.js
+				runtime: nodejs@10
+				inputs:
+					name:
+						type: string
+						description: name of person
+						default: unknown person
+					place:
+						type: string
+						description: place of living
+						value: singarayakonda
+					children:
+						type: integer
+						description: childrens
+						default: 2
+					height:
+						type: float
+						description: height of the person
+						default: 0.0
+				outputs:
+					greeting:
+						type: string
+						description: greeting to user
+					details:
+						type: string
+						description: person details
+			hello-world-env-variables:
+				function: src/hello-envplus.js
+				inputs:
+					name: $FIRSTNAME
+					place: ${TOWN}, ${COUNTRY}
+		
+		
+Commands:
+--------
+ibmcloud fn deploy -p <directory>
+ibmcloud fn deploy -p <directory> -m dir/mymanifest.yaml
+-  verify your manifest file can be read and parsed properly before deploying
+ibmcloud fn deploy --preview -m mymanifest.yaml
+- list all packages
+ibmcloud fn package list
+ibmcloud fn action invoke hello_world_package/hello_world --blocking
+export FIRSTNAME=Elrond TOWN="Rivendell" COUNTRY="M.E."
+ibmcloud cloud-functions action invoke --help
+ibmcloud fn action invoke --help
+
+

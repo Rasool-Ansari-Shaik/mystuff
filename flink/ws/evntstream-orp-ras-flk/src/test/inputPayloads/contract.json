@@ -1,0 +1,138 @@
+{
+  "identifier": "103",
+  "name": "ARCH HEALTH SYSTEM",
+  "effectiveDate": "08-25-2020",
+  "active": true,
+  "expiryDate": "08-25-2021",
+  "modality": {
+    "preference": {
+      "sms": {
+        "enabled": true,
+        "rank": 1
+      },
+      "email": {
+        "enabled": true,
+        "rank": 2
+      },
+      "voice": {
+        "enabled": true,
+        "rank": 3
+      }
+    }
+  },
+  "measure": [
+    {
+      "identifier": "fhir measure identifier value",
+      "priority": 1,
+      "category": {
+        "identifier": "1",
+        "priority": 1
+      }
+    },
+    {
+      "identifier": "fhir measure identifier value",
+      "priority": 2,
+      "category": {
+        "identifier": "1",
+        "priority": 2
+      }
+    }
+  ],
+  "offerings": {
+    "ihe": {
+      "isenabled": true,
+      "modality": {
+        "sms": {
+          "enabled": true,
+          "rank": 1,
+          "overCommunicationLimits": {
+            "noOfCommunication": 5,
+            "noOfDays": 15
+          },
+          "template": "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\r\n  <xsl:output omit-xml-declaration=\"yes\" indent=\"yes\" />\r\n  <xsl:template match=\"/\">\r\n    <xsl:call-template name=\"TEXT\" />\r\n  </xsl:template>\r\n  <xsl:template name=\"TEXT\">\r\n    <xsl:value-of select=\"//Text/Message/Body\" /> Txt STOP to opt-out. Msg-Data rates may apply.\r\n   </xsl:template>\r\n</xsl:stylesheet>",
+          "retrySettings": {
+            "waitPeriodInDaysNextAttempt": "1",
+            "numberOfRetryPerDay": "10",
+            "timeIntervalInMin": "10"
+          },
+          "sender": "",
+          "shortCode": "",
+          "carrier": ""
+        },
+        "email": {
+          "enabled": true,
+          "rank": 2,
+          "overCommunicationLimits": {
+            "noOfCommunication": 5,
+            "noOfDays": 15
+          },
+          "template": "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">\r\n  <xsl:output omit-xml-declaration=\"yes\" indent=\"yes\" />\r\n  <xsl:template match=\"/\">\r\n    <xsl:call-template name=\"TEXT\" />\r\n  </xsl:template>\r\n  <xsl:template name=\"TEXT\">\r\n    <xsl:value-of select=\"//Text/Message/Body\" /> Txt STOP to opt-out. Msg-Data rates may apply.\r\n   </xsl:template>\r\n</xsl:stylesheet>",
+          "retrySettings": {
+            "waitPeriodInDaysNextAttempt": "1",
+            "numberOfRetryPerDay": "10",
+            "timeIntervalInMin": "10"
+          },
+          "sender": "test@test.com",
+          "displayName": ""
+        }
+      },
+      "pastCommunicationPeriodInDays": {
+        "successful": 30,
+        "unsuccessful": 7
+      },
+      "patient": {
+        "attributeList": [
+          "First Name",
+          "Last Name",
+          "Email Address",
+          "Mobile Number",
+          "Home Phone Number",
+          "Consent for Communication",
+          "Patient Active Status",
+          "Patient Importance Status",
+          "Patient communication preference"
+        ],
+        "sourceSystem": {
+          "recentlyUpdated": {
+            "name": "ABC",
+            "enabled": false
+          },
+          "strict": {
+            "name": "Epic",
+            "enabled": true
+          },
+          "hierarchy": {
+            "enabled": false,
+            "list": [
+              {
+                "sourceSystem": "ABC",
+                "rank": "1"
+              }
+            ]
+          },
+          "sender": {
+            "name": "ABC",
+            "enabled": false
+          }
+        },
+        "consent": true,
+        "attributedProvider": true,
+        "allowOnlyActive": true,
+        "allowGlobalOptOut": false,
+        "useCommunicationPreference": true,
+        "importanceStatus": {
+          "allowVip": false,
+          "allowBadDebt": false,
+          "allowDoNotContact": false,
+          "allowNoCommPrivacy": false,
+          "allowNoCommHealthReminder": false
+        }
+      },
+      "purgeCommunicationTTL": "2"
+    }
+  },
+  "languageSupported": [
+    { "Language": "English", "selected": true }
+  ],
+  "defaultLanguage": "English"
+}

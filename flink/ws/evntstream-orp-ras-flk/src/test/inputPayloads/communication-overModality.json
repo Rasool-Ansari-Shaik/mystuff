@@ -1,0 +1,1014 @@
+{
+    "resourceType": "Bundle",
+    "id": "d8e4358a-c240-433c-87b0-dbdd317df5a6",
+    "type": "searchset",
+    "total": 6,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:9080/fhir-server/api/v4/Communication?communication-mode=http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system|email&received=gt2020-09-01T06:00:00Z&subject=Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/83fcabcf-2c16-45ee-90a2-3e491b3bb80b",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "83fcabcf-2c16-45ee-90a2-3e491b3bb80b",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "99999"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                            "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                            "valueString": "IBM"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                            "valueString": "Engagement Communication"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                            "valueString": "ATC"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                            "valueString": "1.0"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                            "valueDateTime": "2020-03-01T10:01:00Z"
+                        }
+                    ],
+                    "versionId": "1",
+                    "lastUpdated": "2020-09-14T12:30:09.904Z",
+                    "source": "http://ibm.com/fhir/engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/cdm/StructureDefinition/engagement-communication"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                            "code": "SECONDARY"
+                        }
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: EngagementCommunicationExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = de25d288-120e-47c1-bb76-caac8bc3f439</p><p><b>basedOn</b>: <a href=\"CommunicationRequest-EngagementCommunicationRequestExample.html\">Generated Summary: id: EngagementCommunicationRequestExample; Resource Identifier = 0bd930b0-e2fc-4967-957d-a6719ecde9b4; status: completed; <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-reqeust-status-reason-code-system comm-request-complete}\">In-Process - Communication request complete</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span>; priority: routine; occurrence: Jun 16, 2020 4:00:00 AM --&gt; Jun 16, 2020 3:00:00 PM; authoredOn: Jun 15, 2020 10:00:00 PM</a></p><p><b>status</b>: in-progress</p><p><b>statusReason</b>: <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-queued}, {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-sending}\">In-Process - SMS text queued</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span></p><p><b>priority</b>: routine</p><p><b>subject</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>about</b>: <a href=\"CareGapObservationExample)\">CareGapObservationExample)</a></p><p><b>recipient</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>sender</b>: <a href=\"Organization/Genesis\">Organization/Genesis</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td>Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment.</td></tr></table></div>"
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+                        "valueContactPoint": {
+                            "system": "sms",
+                            "value": "808-248-8689",
+                            "use": "mobile"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                            "code": "email"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+                        "valueString": "dm-template"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+                        "valueString": "{shortCode = '888-111'}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/CDMPractitionerRole-Attributed-PCP"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "dm-hba1c-caregap-poor-control"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+                        "valueReference": {
+                            "reference": "Measure/QualityMeasureExample"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/cdm/engagement-communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/EngagementCommunicationRequestExample"
+                    }
+                ],
+                "status": "in-progress",
+                "statusReason": {
+                    "coding": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:01:01Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-queued",
+                            "display": "In-Process - SMS text queued"
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:02:02Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-sending",
+                            "display": "In-Process - Sending SMS text"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                },
+                "about": [
+                    {
+                        "reference": "CareGapObservationExample)"
+                    }
+                ],
+                "received": "2020-09-13T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                    }
+                ],
+                "sender": {
+                    "reference": "Organization/Genesis"
+                },
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/27bb6656-19b3-4b6d-afb5-4b1ad1f2d22d",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "27bb6656-19b3-4b6d-afb5-4b1ad1f2d22d",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "99999"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                            "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                            "valueString": "IBM"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                            "valueString": "Engagement Communication"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                            "valueString": "ATC"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                            "valueString": "1.0"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                            "valueDateTime": "2020-03-01T10:01:00Z"
+                        }
+                    ],
+                    "versionId": "1",
+                    "lastUpdated": "2020-09-14T12:31:21.877Z",
+                    "source": "http://ibm.com/fhir/engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/cdm/StructureDefinition/engagement-communication"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                            "code": "SECONDARY"
+                        }
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: EngagementCommunicationExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = de25d288-120e-47c1-bb76-caac8bc3f439</p><p><b>basedOn</b>: <a href=\"CommunicationRequest-EngagementCommunicationRequestExample.html\">Generated Summary: id: EngagementCommunicationRequestExample; Resource Identifier = 0bd930b0-e2fc-4967-957d-a6719ecde9b4; status: completed; <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-reqeust-status-reason-code-system comm-request-complete}\">In-Process - Communication request complete</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span>; priority: routine; occurrence: Jun 16, 2020 4:00:00 AM --&gt; Jun 16, 2020 3:00:00 PM; authoredOn: Jun 15, 2020 10:00:00 PM</a></p><p><b>status</b>: in-progress</p><p><b>statusReason</b>: <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-queued}, {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-sending}\">In-Process - SMS text queued</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span></p><p><b>priority</b>: routine</p><p><b>subject</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>about</b>: <a href=\"CareGapObservationExample)\">CareGapObservationExample)</a></p><p><b>recipient</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>sender</b>: <a href=\"Organization/Genesis\">Organization/Genesis</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td>Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment.</td></tr></table></div>"
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+                        "valueContactPoint": {
+                            "system": "sms",
+                            "value": "808-248-8689",
+                            "use": "mobile"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                            "code": "email"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+                        "valueString": "dm-template"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+                        "valueString": "{shortCode = '888-111'}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/CDMPractitionerRole-Attributed-PCP"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "dm-hba1c-caregap-poor-control"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+                        "valueReference": {
+                            "reference": "Measure/QualityMeasureExample"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/cdm/engagement-communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/EngagementCommunicationRequestExample"
+                    }
+                ],
+                "status": "in-progress",
+                "statusReason": {
+                    "coding": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:01:01Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-queued",
+                            "display": "In-Process - SMS text queued"
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:02:02Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-sending",
+                            "display": "In-Process - Sending SMS text"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                },
+                "about": [
+                    {
+                        "reference": "CareGapObservationExample)"
+                    }
+                ],
+                "received": "2020-09-10T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                    }
+                ],
+                "sender": {
+                    "reference": "Organization/Genesis"
+                },
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/25698b4e-b2e5-47d5-af18-0427415e1713",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "25698b4e-b2e5-47d5-af18-0427415e1713",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "99999"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                            "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                            "valueString": "IBM"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                            "valueString": "Engagement Communication"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                            "valueString": "ATC"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                            "valueString": "1.0"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                            "valueDateTime": "2020-03-01T10:01:00Z"
+                        }
+                    ],
+                    "versionId": "1",
+                    "lastUpdated": "2020-09-14T12:32:09.558Z",
+                    "source": "http://ibm.com/fhir/engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/cdm/StructureDefinition/engagement-communication"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                            "code": "SECONDARY"
+                        }
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: EngagementCommunicationExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = de25d288-120e-47c1-bb76-caac8bc3f439</p><p><b>basedOn</b>: <a href=\"CommunicationRequest-EngagementCommunicationRequestExample.html\">Generated Summary: id: EngagementCommunicationRequestExample; Resource Identifier = 0bd930b0-e2fc-4967-957d-a6719ecde9b4; status: completed; <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-reqeust-status-reason-code-system comm-request-complete}\">In-Process - Communication request complete</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span>; priority: routine; occurrence: Jun 16, 2020 4:00:00 AM --&gt; Jun 16, 2020 3:00:00 PM; authoredOn: Jun 15, 2020 10:00:00 PM</a></p><p><b>status</b>: in-progress</p><p><b>statusReason</b>: <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-queued}, {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-sending}\">In-Process - SMS text queued</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span></p><p><b>priority</b>: routine</p><p><b>subject</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>about</b>: <a href=\"CareGapObservationExample)\">CareGapObservationExample)</a></p><p><b>recipient</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>sender</b>: <a href=\"Organization/Genesis\">Organization/Genesis</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td>Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment.</td></tr></table></div>"
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+                        "valueContactPoint": {
+                            "system": "sms",
+                            "value": "808-248-8689",
+                            "use": "mobile"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                            "code": "email"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+                        "valueString": "dm-template"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+                        "valueString": "{shortCode = '888-111'}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/CDMPractitionerRole-Attributed-PCP"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "dm-hba1c-caregap-poor-control"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+                        "valueReference": {
+                            "reference": "Measure/QualityMeasureExample"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/cdm/engagement-communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/EngagementCommunicationRequestExample"
+                    }
+                ],
+                "status": "in-progress",
+                "statusReason": {
+                    "coding": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:01:01Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-queued",
+                            "display": "In-Process - SMS text queued"
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:02:02Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-sending",
+                            "display": "In-Process - Sending SMS text"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                },
+                "about": [
+                    {
+                        "reference": "CareGapObservationExample)"
+                    }
+                ],
+                "received": "2020-09-08T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                    }
+                ],
+                "sender": {
+                    "reference": "Organization/Genesis"
+                },
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/80f7bbd6-1f08-4040-80ab-c0e9e8cd8076",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "80f7bbd6-1f08-4040-80ab-c0e9e8cd8076",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "99999"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                            "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                            "valueString": "IBM"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                            "valueString": "Engagement Communication"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                            "valueString": "ATC"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                            "valueString": "1.0"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                            "valueDateTime": "2020-03-01T10:01:00Z"
+                        }
+                    ],
+                    "versionId": "1",
+                    "lastUpdated": "2020-09-14T12:32:30.481Z",
+                    "source": "http://ibm.com/fhir/engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/cdm/StructureDefinition/engagement-communication"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                            "code": "SECONDARY"
+                        }
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: EngagementCommunicationExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = de25d288-120e-47c1-bb76-caac8bc3f439</p><p><b>basedOn</b>: <a href=\"CommunicationRequest-EngagementCommunicationRequestExample.html\">Generated Summary: id: EngagementCommunicationRequestExample; Resource Identifier = 0bd930b0-e2fc-4967-957d-a6719ecde9b4; status: completed; <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-reqeust-status-reason-code-system comm-request-complete}\">In-Process - Communication request complete</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span>; priority: routine; occurrence: Jun 16, 2020 4:00:00 AM --&gt; Jun 16, 2020 3:00:00 PM; authoredOn: Jun 15, 2020 10:00:00 PM</a></p><p><b>status</b>: in-progress</p><p><b>statusReason</b>: <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-queued}, {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-sending}\">In-Process - SMS text queued</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span></p><p><b>priority</b>: routine</p><p><b>subject</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>about</b>: <a href=\"CareGapObservationExample)\">CareGapObservationExample)</a></p><p><b>recipient</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>sender</b>: <a href=\"Organization/Genesis\">Organization/Genesis</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td>Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment.</td></tr></table></div>"
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+                        "valueContactPoint": {
+                            "system": "sms",
+                            "value": "808-248-8689",
+                            "use": "mobile"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                            "code": "email"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+                        "valueString": "dm-template"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+                        "valueString": "{shortCode = '888-111'}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/CDMPractitionerRole-Attributed-PCP"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "dm-hba1c-caregap-poor-control"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+                        "valueReference": {
+                            "reference": "Measure/QualityMeasureExample"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/cdm/engagement-communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/EngagementCommunicationRequestExample"
+                    }
+                ],
+                "status": "in-progress",
+                "statusReason": {
+                    "coding": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:01:01Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-queued",
+                            "display": "In-Process - SMS text queued"
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:02:02Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-sending",
+                            "display": "In-Process - Sending SMS text"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                },
+                "about": [
+                    {
+                        "reference": "CareGapObservationExample)"
+                    }
+                ],
+                "received": "2020-09-06T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                    }
+                ],
+                "sender": {
+                    "reference": "Organization/Genesis"
+                },
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9080/fhir-server/api/v4/Communication/dfcee035-83d6-416a-a65d-ea3aae41f6ed",
+            "resource": {
+                "resourceType": "Communication",
+                "id": "dfcee035-83d6-416a-a65d-ea3aae41f6ed",
+                "meta": {
+                    "extension": [
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/tenant-id",
+                            "valueString": "99999"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/ingestion-batch-id",
+                            "valueString": "b069a545-9506-40c6-8498-23de2e189143"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-organization",
+                            "valueString": "IBM"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-type",
+                            "valueString": "Engagement Communication"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-name",
+                            "valueString": "ATC"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-version",
+                            "valueString": "1.0"
+                        },
+                        {
+                            "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                            "valueDateTime": "2020-03-01T10:01:00Z"
+                        }
+                    ],
+                    "versionId": "1",
+                    "lastUpdated": "2020-09-14T12:32:46.767Z",
+                    "source": "http://ibm.com/fhir/engagement",
+                    "profile": [
+                        "http://ibm.com/fhir/cdm/StructureDefinition/engagement-communication"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/process-meta-primary-or-secondary",
+                            "code": "SECONDARY"
+                        }
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: EngagementCommunicationExample</p><p><b>meta</b>: </p><p><b>identifier</b>: Resource Identifier = de25d288-120e-47c1-bb76-caac8bc3f439</p><p><b>basedOn</b>: <a href=\"CommunicationRequest-EngagementCommunicationRequestExample.html\">Generated Summary: id: EngagementCommunicationRequestExample; Resource Identifier = 0bd930b0-e2fc-4967-957d-a6719ecde9b4; status: completed; <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-reqeust-status-reason-code-system comm-request-complete}\">In-Process - Communication request complete</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span>; priority: routine; occurrence: Jun 16, 2020 4:00:00 AM --&gt; Jun 16, 2020 3:00:00 PM; authoredOn: Jun 15, 2020 10:00:00 PM</a></p><p><b>status</b>: in-progress</p><p><b>statusReason</b>: <span title=\"Codes: {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-queued}, {http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system text-sending}\">In-Process - SMS text queued</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/communication-category notification}\">Notification</span></p><p><b>priority</b>: routine</p><p><b>subject</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>about</b>: <a href=\"CareGapObservationExample)\">CareGapObservationExample)</a></p><p><b>recipient</b>: <a href=\"Group/PatientGroup1\">Group/PatientGroup1</a></p><p><b>sender</b>: <a href=\"Organization/Genesis\">Organization/Genesis</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Content[x]</b></td></tr><tr><td>*</td><td>Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment.</td></tr></table></div>"
+                },
+                "extension": [
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-contact",
+                        "valueContactPoint": {
+                            "system": "sms",
+                            "value": "808-248-8689",
+                            "use": "mobile"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-mode",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-mode-code-system",
+                            "code": "email"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-template",
+                        "valueString": "dm-template"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-payload-data",
+                        "valueString": "{shortCode = '888-111'}"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-product",
+                        "valueCoding": {
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-product-code-system",
+                            "code": "outreach"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-on-behalf-of",
+                        "valueReference": {
+                            "reference": "PractitionerRole/CDMPractitionerRole-Attributed-PCP"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-care-gap",
+                        "valueString": "dm-hba1c-caregap-poor-control"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-priority-sequence",
+                        "valueDecimal": 1
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-retry-limt",
+                        "valueString": "5"
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-vendor",
+                        "valueReference": {
+                            "reference": "Organization/Genesis"
+                        }
+                    },
+                    {
+                        "url": "http://ibm.com/fhir/cdm/StructureDefinition/communication-measure",
+                        "valueReference": {
+                            "reference": "Measure/QualityMeasureExample"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "RI",
+                                    "display": "Resource Identifier"
+                                }
+                            ]
+                        },
+                        "system": "http://ibm.com/fhir/cdm/engagement-communication",
+                        "value": "de25d288-120e-47c1-bb76-caac8bc3f439",
+                        "assigner": {
+                            "display": "IBM"
+                        }
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "CommunicationRequest/EngagementCommunicationRequestExample"
+                    }
+                ],
+                "status": "in-progress",
+                "statusReason": {
+                    "coding": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:01:01Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-queued",
+                            "display": "In-Process - SMS text queued"
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://ibm.com/fhir/cdm/StructureDefinition/process-timestamp",
+                                    "valueDateTime": "2020-03-01T10:02:02Z"
+                                }
+                            ],
+                            "system": "http://ibm.com/fhir/cdm/CodeSystem/eng-communication-status-reason-code-system",
+                            "code": "text-sending",
+                            "display": "In-Process - Sending SMS text"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                                "code": "notification"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "routine",
+                "subject": {
+                    "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                },
+                "about": [
+                    {
+                        "reference": "CareGapObservationExample)"
+                    }
+                ],
+                "received": "2020-09-04T06:00:00Z",
+                "recipient": [
+                    {
+                        "reference": "Patient/ea996a82-6dd0-43be-8439-10b0331ecf32"
+                    }
+                ],
+                "sender": {
+                    "reference": "Organization/Genesis"
+                },
+                "payload": [
+                    {
+                        "contentString": "Our records indicate you are overdue for a medical appointment.  Please contact [PRACTIIONER-NAME] at [FACILITY-NAME], [FACILTY-PHONE] to schedule an appointment."
+                    }
+                ]
+            }
+        }
+    ]
+}

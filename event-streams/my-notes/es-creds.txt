@@ -1,0 +1,21 @@
+{
+  "api_key": "n1V9mnm-L8BCOd82_scrYnicZRA25DJWaanpCIYkzwzD",
+  "apikey": "n1V9mnm-L8BCOd82_scrYnicZRA25DJWaanpCIYkzwzD",
+  "iam_apikey_description": "Auto-generated for key bfb0ca74-2ebb-42c3-a9c3-9b1d8e9d5020",
+  "iam_apikey_name": "EventStream-4r-Servicecredentials-1",
+  "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+  "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/fdc28b9ee4fb404da39e3ec7f99666d1::serviceid:ServiceId-a29c9d06-713e-4563-9c37-bf7e7bc1cee7",
+  "instance_id": "e18b6c15-4ee7-479f-b763-82a45cd39893",
+  "kafka_admin_url": "https://7qk6gz43brmbjwtt.svc03.us-south.eventstreams.cloud.ibm.com",
+  "kafka_brokers_sasl": [
+    "broker-1-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093",
+    "broker-5-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093",
+    "broker-4-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093",
+    "broker-3-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093",
+    "broker-0-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093",
+    "broker-2-7qk6gz43brmbjwtt.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093"
+  ],
+  "kafka_http_url": "https://7qk6gz43brmbjwtt.svc03.us-south.eventstreams.cloud.ibm.com",
+  "password": "n1V9mnm-L8BCOd82_scrYnicZRA25DJWaanpCIYkzwzD",
+  "user": "token"
+}
