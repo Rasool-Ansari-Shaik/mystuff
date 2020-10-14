@@ -1,0 +1,8 @@
+docker images
+docker ps
+docker build -t demo1-dock3 .
+docker run -p 8084:8083 -d demo1-dock3
+curl localhost:8084
+docker run -p 8085:8083 demo1-dock3
+docker rm -f <container-id>
+docker exec -it <container-id> /bin/bash

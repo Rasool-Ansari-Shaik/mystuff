@@ -1,0 +1,26 @@
+GIT-HUB first project upload commands (https://www.youtube.com/watch?v=nHk53YnrE5k)
+==========================================
+
+git init
+git add .
+git commit -m "first commit"
+git status
+git remote add origin <remote-repository-url>
+ex: git remote add origin https://github.com/Rasool-Ansari-Shaik/voice-twiml.git
+git push -f origin master
+
+
+Update and commit existing files (https://opensource.com/article/18/2/how-clone-modify-add-delete-git-files)
+=====================================
+git clone https://github.com/Rasool-Ansari-Shaik/voice-twiml.git
+cd voice-twiml
+git status
+git diff
+git add ./src/main/java/com/communication/call/CallTwiMlApplication.java
+git status
+git diff 
+git diff --cached
+git commit -m "Updated controller file with get method"
+git push -u origin master
+
+

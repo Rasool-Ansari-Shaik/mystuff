@@ -1,0 +1,494 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.8.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.virtusa.hil.quality</groupId>
+	<artifactId>virtusa-hil-quality</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<developers>
+		<developer>
+			<email>narahari@virtusa.com</email>
+			<name>Narasimhaiah Narahari</name>
+		</developer>
+		<developer>
+			<email>rasoolansaris@virtusa.com</email>
+			<name>Rasool Ansari Shaik</name>
+		</developer>
+	</developers>
+
+	<properties>
+		<!-- Do you want to skip (enable / disable) the Plug-ins -->
+		<pmd.skip.plugin>false</pmd.skip.plugin>
+		<checkstyle.skip.plugin>false</checkstyle.skip.plugin>
+		<findbugs.skip.plugin>true</findbugs.skip.plugin>
+		<surefire.skip.plugin>true</surefire.skip.plugin>
+		<jacoco.skip.plugin>true</jacoco.skip.plugin>
+		<jdepend.skip.plugin>true</jdepend.skip.plugin>
+		<cobertura.skip.plugin>true</cobertura.skip.plugin>
+		<owasp.skip.plugin>true</owasp.skip.plugin>
+		<spotbugs.skip.plugin>true</spotbugs.skip.plugin>
+
+		<!-- Continue on fail -->
+		<pmd.fail.continue.build>true</pmd.fail.continue.build>
+		<checkstyle.fail.continue.build>true</checkstyle.fail.continue.build>
+		<findbugs.fail.continue.build>false</findbugs.fail.continue.build>
+		<surefire.fail.continue.build>false</surefire.fail.continue.build>
+		<jacoco.fail.continue.build>false</jacoco.fail.continue.build>
+		<cobertura.fail.continue.build>false</cobertura.fail.continue.build>
+		<owasp.fail.continue.build>false</owasp.fail.continue.build>
+		<spotbugs.fail.continue.build>false</spotbugs.fail.continue.build>
+
+		<!-- All Plug-in versions -->
+		<pmd.version>3.12.0</pmd.version> <!-- We needed 4.3 -->
+		<checkstyle.version>3.0.0</checkstyle.version><!-- 2.9 -->
+		<findbugs.version>3.0.1</findbugs.version>
+		<spotbugs.version>3.1.12</spotbugs.version> <!-- 3.1.12.3-SNAPSHOT -->
+		<jacoco.version>0.8.2</jacoco.version>
+		<cobertura.version>2.5.2</cobertura.version>
+		<jdepend.version>2.0</jdepend.version>
+		<surefire.version>2.10</surefire.version>
+		<owasp.version>5.2.4</owasp.version>
+		<junit.version>4.10</junit.version>
+		<junit-jupiter.version>5.3.2</junit-jupiter.version>
+		<mockito.version>2.24.0</mockito.version>
+		<maven.site.version>3.8.2</maven.site.version>
+		<java.compiler.level>1.8</java.compiler.level>
+		<!--<testng.version>6.8.8</testng.version> <jaxb.api.version>2.2.2</jaxb.api.version> 
+			<maven.enforcer.plugin.vertsion>1.0.1</maven.enforcer.plugin.vertsion> <maven.changelog.plugin.version>2.2</maven.changelog.plugin.version> -->
+
+	</properties>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${owasp.version}</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<skip>${owasp.skip.plugin}</skip>
+					<failBuildOnAnyVulnerability>${owasp.fail.continue.build}</failBuildOnAnyVulnerability>
+					<cveUrlBase>https://nvd.nist.gov/feeds/json/cve/1.0/nvdcve-1.0-modified.json.gz</cveUrlBase>
+					<cveUrlModified>https://nvd.nist.gov/feeds/json/cve/1.0/nvdcve-1.0-modified.json.gz</cveUrlModified>
+					<scanSet>
+						<fileSet>
+							<directory>src/main/java</directory>
+						</fileSet>
+					</scanSet>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.compiler.level}</source>
+					<target>${java.compiler.level}</target>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<targetJdk>${java.compiler.level}</targetJdk>
+							<linkXref>true</linkXref>
+							<minimumTokens>10</minimumTokens>
+							<failOnViolation>${pmd.fail.continue.build}</failOnViolation>
+							<failurePriority>5</failurePriority>
+							<verbose>true</verbose>
+							<excludes>
+								<exclude>**/Abstract*.java</exclude>
+								<exclude>**/*JTest.java</exclude>
+								<exclude>**/*Test.java</exclude>
+								<exclude>**/PackageTestCase.java</exclude>
+								<exclude>**/ProjectTestCase.java</exclude>
+								<exclude>**/bindings/**/*.java</exclude>
+								<exclude>**/_?/**/*.java</exclude>
+								<exclude>**/ObjectFactory.java</exclude>
+							</excludes>
+							<skip>${pmd.skip.plugin}</skip>
+							<!-- <rulesets> <ruleset>project-pmd-rules.xml</ruleset> </rulesets> -->
+						</configuration>
+					</execution>
+				</executions>
+				<!-- <dependencies> <dependency> <groupId>com.virtusa.hil.quality</groupId> 
+					<artifactId>virtusa-hil-code-quality-rules</artifactId> <version>1.0-SNAPSHOT</version> 
+					</dependency> </dependencies> -->
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<configuration>
+					<skip>${checkstyle.skip.plugin}</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<failOnViolation>true</failOnViolation> <!-- ${checkstyle.fail.continue.build} -->
+							<violationSeverity>error</violationSeverity>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<effort>Max</effort>
+					<debug>false</debug>
+					<threshold>Low</threshold>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<failOnError>${findbugs.fail.continue.build}</failOnError>
+					<!-- <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory> -->
+					<skip>${findbugs.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.version}</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<excludes>
+						<exclude>**/Abstract*.java</exclude>
+						<exclude>**/*JTest.java</exclude>
+						<exclude>**/*Test.java</exclude>
+						<exclude>**/PackageTestCase.java</exclude>
+						<exclude>**/ProjectTestCase.java</exclude>
+						<exclude>**/bindings/**/*.java</exclude>
+						<exclude>**/_?/**/*.java</exclude>
+						<exclude>**/ObjectFactory.java</exclude>
+					</excludes>
+					<failIfNoTests>${surefire.fail.continue.build}</failIfNoTests>
+					<skip>${surefire.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.version}</version>
+				<configuration>
+					<skip>${cobertura.skip.plugin}</skip>
+					<check>
+						<branchRate>90</branchRate>
+						<lineRate>90</lineRate>
+						<haltOnFailure>${cobertura.fail.continue.build}</haltOnFailure>
+						<totalBranchRate>90</totalBranchRate>
+						<totalLineRate>90</totalLineRate>
+					</check>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<id>clean</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>instrument</id>
+						<phase>package</phase>
+						<goals>
+							<goal>cobertura</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jdepend-maven-plugin</artifactId>
+				<version>${jdepend.version}</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<skip>${jdepend.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven.site.version}</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<configuration>
+					<skip>${jacoco.skip.plugin}</skip>
+					<haltOnFailure>${jacoco.fail.continue.build}</haltOnFailure>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>${spotbugs.version}</version><!-- $NO-MVN-MAN-VER$ -->
+				<configuration>
+					<skip>${spotbugs.skip.plugin}</skip>
+					<failOnError>${spotbugs.fail.continue.build}</failOnError>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xml-maven-plugin</artifactId>
+				<version>1.0</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<transformationSets>
+						<transformationSet>
+							<!-- Configures the source directory of XML files. -->
+							<dir>${project.build.directory}/findbugs</dir>
+							<!-- Configures the directory in which the FindBugs report is written. -->
+							<outputDir>${project.build.directory}/findbugs</outputDir>
+							<!-- Selects the used stylesheet. -->
+							<!-- <stylesheet>fancy-hist.xsl</stylesheet> -->
+							<stylesheet>default.xsl</stylesheet>
+							<!--<stylesheet>plain.xsl</stylesheet> -->
+							<!--<stylesheet>fancy.xsl</stylesheet> -->
+							<!--<stylesheet>summary.xsl</stylesheet> -->
+							<fileMappers>
+								<!-- Configures the file extension of the output files. -->
+								<fileMapper
+									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+									<targetExtension>.html</targetExtension>
+								</fileMapper>
+							</fileMappers>
+						</transformationSet>
+					</transformationSets>
+				</configuration>
+				<!-- <executions> Ensures that the XSLT transformation is run when the 
+					project is compiled. <execution> <phase>compile</phase> <goals> <goal>transform</goal> 
+					</goals> </execution> </executions> -->
+				<dependencies>
+					<dependency>
+						<groupId>com.google.code.findbugs</groupId>
+						<artifactId>findbugs</artifactId>
+						<version>2.0.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${checkstyle.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pmd-plugin</artifactId>
+					<version>${pmd.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.owasp</groupId>
+					<artifactId>dependency-check-maven</artifactId>
+					<version>${owasp.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>${spotbugs.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<archive>
+							<manifestEntries>
+								<Build-Jdk>${java.compiler.level}</Build-Jdk>
+							</manifestEntries>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jdepend-maven-plugin</artifactId>
+					<version>${jdepend.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven.site.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${surefire.version}</version>
+				<configuration>
+					<skip>${surefire.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd.version}</version>
+				<configuration>
+					<!-- <configLocation>/src/pmd.xml</configLocation> -->
+					<enableRulesSummary>true</enableRulesSummary>
+					<enableSeveritySummary>true</enableSeveritySummary>
+					<enableFilesSummary>true</enableFilesSummary>
+					<enableRSS>true</enableRSS>
+					<skip>${pmd.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<configuration>
+					<enableRulesSummary>true</enableRulesSummary>
+					<enableSeveritySummary>true</enableSeveritySummary>
+					<enableFilesSummary>true</enableFilesSummary>
+					<enableRSS>true</enableRSS>
+					<skip>${checkstyle.skip.plugin}</skip>
+					<!-- <configLocation>my-checkstyle-rules.xml</configLocation> <suppressionsLocation>project-checkstyle-suppression-filter.xml</suppressionsLocation> -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<effort>Max</effort>
+					<debug>false</debug>
+					<threshold>Low</threshold>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
+					<skip>${findbugs.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<configuration>
+					<skip>${jacoco.skip.plugin}</skip>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- select non-aggregate reports -->
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jdepend-maven-plugin</artifactId>
+				<version>${jdepend.version}</version>
+				<configuration>
+					<skip>${jdepend.skip.plugin}</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.version}</version>
+				<configuration>
+					<skip>${cobertura.skip.plugin}</skip>
+					<formats>
+						<format>html</format>
+						<!-- <format>xml</format> -->
+					</formats>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${owasp.version}</version>
+				<configuration>
+					<skip>${owasp.skip.plugin}</skip>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>${spotbugs.version}</version>
+				<configuration>
+					<skip>${spotbugs.skip.plugin}</skip>
+					<!-- <xmlOutput>true</xmlOutput> Optional directory to put spotbugs 
+						xdoc xml report <xmlOutputDirectory>target/site</xmlOutputDirectory> -->
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</reporting>
+
+
+</project>

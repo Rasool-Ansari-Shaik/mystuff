@@ -1,0 +1,129 @@
+Spring Boot Learning
+=====================
+1) How to inject a value to a static variable?
+A) 
+Example-1
+----------
+@Component
+public class GlobalValue {
+
+    public static String DATABASE;
+
+    @Value("${mongodb.db}")
+    public void setDatabase(String db) {
+        DATABASE = db;
+    }
+}
+
+Example-2
+----------
+@SpringBootApplication
+public class Demo1Application {
+
+	public static void main(String[] args) {
+		
+		SpringApplication application = new SpringApplication(Demo1Application.class);
+//		application.setAddCommandLineProperties(false);  // Used to disable the command line properties
+		application.run(args);
+		
+		System.out.println("appName: " +name);
+		
+	}
+	
+	@Value("${spring.application.name}")
+	public void setAppName(String an) {
+		name= an;
+	}
+	
+	public static String name;
+}
+
+2) How to disable command line properties?
+A) Use SpringApplication.setAddCommandLineProperties(false)
+Example-1
+----------
+public static void main(String[] args) {		
+		SpringApplication application = new SpringApplication(Demo1Application.class);
+		application.setAddCommandLineProperties(false);  // Used to disable the command line properties
+		application.run(args);
+}
+
+3) What is the order of precedence of loading properties from application.properties?
+A) 
+Example-1
+----------
+1. A /config subdirectory of the current directory
+2. The current directory
+3. A classpath /config package
+4. The classpath root
+
+Example-2
+----------
+1. file:./config/
+2. file:./
+3. classpath:/config/
+4. classpath:/
+
+1. Create a folder config under application root and put application.properties file. The first preference is given to this file.
+2. Create application.properties file under application root. The second preference is given to this file.
+3. Create a folder config under resources and put application.properties file. The third preference is given to this file.
+4. Create application.properties file in resources. The last preference is given to this file.
+
+4) How to use another properties file instead of application.properties?
+A)
+Example-1
+----------
+Place the new file (appl.properties) under classpath (resources) and refer only the file name (appl) in spring.config.name property as part of 
+command line property.
+$ java -jar myproject.jar --spring.config.name=appl
+Do not use .properties/.yml. Only give file name
+
+Example-2
+----------
+Provide the location with file name in spring.config.location property.
+$ java -jar myproject.jar --spring.config.location=classpath:/appl.properties
+
+5) Can we provide/use multiple properties files in the application?
+A) Yes
+Example-1
+-----------
+$ java -jar myproject.jar --spring.config.name=appl1,appl2
+
+Example-2
+----------
+$ java -jar myproject.jar --spring.config.location=classpath:/appl1.properties,classpath:/appl2.properties
+
+6) What is the order of precedence given if we provide multiple files?
+A) Last file given more preference than the first. Last to First.
+Example-1
+----------
+$ java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties
+
+7) spring.config.location vs spring.config.additional-location
+A) Use additional-location for custom config locations. Use location for default locations.
+The precedence is given to additional-location files.
+
+8) What is the default profile?
+A) Profiles are defined with the property spring.profiles.active. If none defined, [default] is considered as the default profile. If the application
+has both application.properties and application-default.properties, then application-default.properties are considered in the application.
+If you have specified any files in spring.config.location, profile-specific variants of those files are not considered. 
+Use directories in spring.config.location if you want to also use profile-specific properties.
+
+9) What are placeholders in properties?
+A) You can refer back to previously defined values in the properties file. 
+Example-1
+----------
+app.name=MyApp
+app.description=${app.name} is a Spring Boot application
+
+10) Spring Boot Auto configuration?
+A) For each spring-boot-starter-* dependency in the POM file, Spring Boot executes a default AutoConfiguration class. 
+AutoConfiguration classes use the *AutoConfiguration lexical pattern, where * represents the library. 
+For example, the autoconfiguration of JPA repositories is done through JpaRepositoriesAutoConfiguration.
+Run the application with --debug to see the autoconfiguration report like java -jar app.jar --debug
+I have seen around 185 AutoConfiguration classes which are devided among 4 categories. 
+1. Positive Matches -> AutoConfiguration classes which has dependency in pom.xml
+2. Negative Matches -> AutoConfiguration classes which does not have any dependency in pom.xml
+3. Exclusions -> AutoConfiguration classes which are not to be considered as part of auto configuration. These can be excluded using @EnableAutoConfiguration(exclude={...})
+4. Unconditional Classes -> There are 3 classes - ConfigurationPropertiesAutoConfiguration, PropertyPlaceholderAutoConfiguration and ProjectInfoAutoConfiguration. 
+These unconditional classes are always execute.

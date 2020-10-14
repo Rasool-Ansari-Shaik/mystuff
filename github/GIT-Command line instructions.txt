@@ -1,0 +1,42 @@
+Command line instructions 
+===============================
+You can also upload existing files from your computer using the instructions below
+
+GIT Global setup
+===================
+git config --global user.name "Rasool Ansari Shaik"
+git config --global user.email "rasoolansaris@virtusa.com"
+
+git config --global http.sslVerify false
+ssl certificate problem unable to get local issuer certificate git clone issue
+
+
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for 'https://repo.virtusa.com/rasoolansaris/mass-communication-based-on-preferred-channel.git/'
+
+
+Create a new repository
+===========================
+git clone https://repo.virtusa.com/rasoolansaris/mass-communication-based-on-preferred-channel.git
+cd mass-communication-based-on-preferred-channel
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Push an existing folder
+==========================
+cd existing_folder
+git init
+git remote add origin https://repo.virtusa.com/rasoolansaris/mass-communication-based-on-preferred-channel.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Push an existing Git repository
+==================================
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin https://repo.virtusa.com/rasoolansaris/mass-communication-based-on-preferred-channel.git
+git push -u origin --all
+git push -u origin --tags

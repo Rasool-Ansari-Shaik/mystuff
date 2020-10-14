@@ -1,0 +1,18 @@
+1) Refresh
+-> http://localhost:5123/domain-a-service/default
+-> curl localhost:6123/actuator/refresh -d {} -H "Content-Type: application/json"
+2) Why LoadBalanced required for RestTemplate
+3) Fallback not working with DomainA service
+4) Client side load balancing
+-> https://spring.io/guides/gs/client-side-load-balancing/
+java -jar DomainCService-0.0.1-SNAPSHOT.jar --server.port=8211
+java -jar DomainCService-0.0.1-SNAPSHOT.jar --server.port=8212
+5) Verify all services hystrix dashboard - turbine
+-> https://www.youtube.com/watch?v=A4f56RiuDdc
+6) Hystrix dashboard not working - Unable to connect to Command Metric Stream
+-> Resolved
+7) Zipkin dashboard does not have services
+-> Resolved
+8) Pre and post filters in api gateway
+-> https://spring.io/guides/gs/routing-and-filtering/
+9) tubine dashboard contains method names as well. We need to remove them in turbine dashboard. These are not visible in Hystrix dashboard
