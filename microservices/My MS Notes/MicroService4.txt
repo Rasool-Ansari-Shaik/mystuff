@@ -1,0 +1,52 @@
+Micro Service 4
+==================
+Dependencies
+--------------
+Web
+Config Client
+Eureka Discovery Client
+Sleuth
+Zipkin
+Actuator
+Hystrix
+Hystrix Dashboard
+
+bootstrap.properties
+----------------------
+spring.application.name=microservice-4
+spring.cloud.config.uri=http://localhost:5123
+
+microservice-4.properties
+--------------------------
+server.port=7123
+logging.file=logs/microservice-4.log
+
+eureka.client.service-url.defaultZone=http://localhost:5124/eureka
+management.endpoints.web.exposure.include=*
+
+message=Message from microservice-4
+
+
+Annotations
+------------
+@EnableDiscoveryClient
+@EnableHystrix
+@EnableHystrixDashboard
+
+@Bean
+public Sampler defaultSampler() {
+	return Sampler.ALWAYS_SAMPLE;
+}
+
+@LoadBalanced
+@Bean
+public RestTemplate getRestTemplate() {
+	return new RestTemplate();
+}
+
+URL
+----
+http://localhost:7123/ms4
+http://localhost:7123/actuator/hystrix.stream
+-> Success, Short-circuited, Bad, Timedout, Threadpool Rejected, Failure Request count
+-> Error Percentage = (Timedout + Threadpool Rejected + Failure) / Total

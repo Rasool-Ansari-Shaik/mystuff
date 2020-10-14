@@ -1,0 +1,45 @@
+Turbain Service
+================
+Dependencies
+-------------
+Web
+Config Client
+Eureka Discovery Client
+Sleuth
+Zipkin
+Actuator
+Hystrix
+Hystrix Dashboard
+Turbain
+
+bootstrap.properties
+----------------------
+spring.application.name=turbine-service
+spring.cloud.config.uri=http://localhost:5123
+
+turbine-service.properties
+---------------------------
+server.port=5126
+logging.file=logs/turbine-service.log
+
+message=This message is from Turbine service
+
+turbine.app-config=microservice-4,microservice-5
+turbine.cluster-name-expression=new String("default") 
+
+
+Annotations
+------------
+@EnableTurbine
+@EnableHystrixDashboard
+@EnableDiscoveryClient
+
+@Bean
+public Sampler defaultSampler() {
+	return Sampler.ALWAYS_SAMPLE;
+}
+
+URL
+----
+http://localhost:5126/hystrix
+http://localhost:5126/turbine.stream

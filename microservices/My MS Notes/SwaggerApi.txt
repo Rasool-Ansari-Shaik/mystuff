@@ -1,0 +1,38 @@
+Swagger 
+=========
+Dependencies
+--------------
+<swagger.version>2.9.2</swagger.version>
+
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger2</artifactId>
+	<version>${swagger.version}</version>
+</dependency>
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger-ui</artifactId>
+	<version>${swagger.version}</version>
+</dependency>
+
+Annotations
+------------
+@EnableSwagger2
+
+@Bean
+public Docket api() {
+	return new Docket(DocumentationType.SWAGGER_2).select()
+			.apis(RequestHandlerSelectors.basePackage("com.virtusa")).paths(PathSelectors.any())
+			.build().apiInfo(apiInfo());
+}
+
+private ApiInfo apiInfo() {
+	return new ApiInfo("Virtusa", "API for Domain A service", "API TOS", "Terms of service",
+			new Contact("Virtusa", "www.virtusa.com", "rasoolansaris@virtusa.com"), "License of API",
+			"API license URL", Collections.emptyList());
+}
+	
+	
+URL
+----
+http://localhost:6123/swagger-ui.html

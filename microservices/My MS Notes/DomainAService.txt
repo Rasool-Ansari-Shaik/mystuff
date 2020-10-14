@@ -1,0 +1,40 @@
+Domain A Service
+==================
+Dependencies
+--------------
+Web
+Config Client
+Eureka Discovery Client
+Sleuth
+Zipkin
+Actuator
+
+bootstrap.properties
+----------------------
+spring.application.name=domain-a-service
+spring.cloud.config.uri=http://localhost:5123
+
+domain-a-service.properties
+------------------------
+server.port=6123
+logging.file=logs/domain-a-service.log
+
+eureka.client.service-url.defaultZone=http://localhost:5124/eureka
+management.endpoints.web.exposure.include=*
+
+message=Message from domain-a-service
+
+
+Annotations
+------------
+@EnableDiscoveryClient
+
+@Bean
+public Sampler defaultSampler() {
+	return Sampler.ALWAYS_SAMPLE;
+}
+
+URL
+----
+http://localhost:6123/domainA
+curl localhost:6123/actuator/refresh -d {} -H "Content-Type: application/json"

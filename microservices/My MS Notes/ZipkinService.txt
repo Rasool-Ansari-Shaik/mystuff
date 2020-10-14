@@ -1,0 +1,60 @@
+Zipkin Service
+=================
+Dependencies
+--------------
+Config Client
+Eureka Discovery Client
+Sleuth
+Actuator
+Web
+
+<dependency>
+	<groupId>io.zipkin.java</groupId>
+	<artifactId>zipkin-server</artifactId>
+	<version>${zipkin.version}</version>
+</dependency>
+
+<!-- Static content for the web UI -->
+<dependency>
+	<groupId>io.zipkin.java</groupId>
+	<artifactId>zipkin-autoconfigure-ui</artifactId>
+	<version>${zipkin.version}</version>
+	<optional>true</optional>
+</dependency>
+		
+<zipkin.version>2.11.7</zipkin.version>
+		
+
+bootstrap.properties
+---------------------
+spring.application.name=zipkin-service
+spring.cloud.config.uri=http://localhost:5123
+spring.main.allow-bean-definition-overriding=true 
+
+zipkin-service.properties
+---------------------------
+server.port=5125
+logging.file=logs/zipkin-service.log
+
+eureka.client.service-url.defaultZone=http://localhost:5124/eureka
+management.endpoints.web.exposure.include=*
+
+management.metrics.web.server.auto-time-requests=false
+
+application.properties
+-------------------------
+spring.zipkin.baseUrl=http://localhost:5125
+
+Annotations
+-------------
+@EnableZipkinServer
+
+URL
+----
+http://localhost:5125
+http://localhost:5125/zipkin/
+
+
+
+
+

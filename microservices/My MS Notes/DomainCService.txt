@@ -1,0 +1,44 @@
+Domain C Service
+==================
+Dependencies
+--------------
+Web
+Config Client
+Eureka Discovery Client
+Sleuth
+Zipkin
+Actuator
+
+bootstrap.properties
+----------------------
+spring.application.name=domain-c-service
+spring.cloud.config.uri=http://localhost:5123
+
+domain-c-service.properties
+------------------------
+logging.file=logs/domain-c-service.log
+
+eureka.client.service-url.defaultZone=http://localhost:5124/eureka
+management.endpoints.web.exposure.include=*
+
+message=Message from domain-c-service
+
+
+Annotations
+------------
+@EnableDiscoveryClient
+
+@Bean
+public Sampler defaultSampler() {
+	return Sampler.ALWAYS_SAMPLE;
+}
+
+URL
+----
+http://localhost:6125/domainC
+curl localhost:6125/actuator/refresh -d {} -H "Content-Type: application/json"
+
+
+set path=%path%;C:\Users\rasoolansaris\_1\Softwares\Java\jdk1.8.0_201\bin
+java -jar DomainCService-0.0.1-SNAPSHOT.jar --server.port=6125
+java -jar DomainCService-0.0.1-SNAPSHOT.jar --server.port=6126

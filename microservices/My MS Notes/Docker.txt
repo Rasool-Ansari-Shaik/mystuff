@@ -1,0 +1,21 @@
+Docker
+========
+https://hub.docker.com
+
+-> openjdk (official) 	
+
+Dockerfile
+------------
+FROM openjdk:8 
+ADD target/Domain_A_Service.jar Domain_A_Service.jar
+EXPOSE 8085
+ENTRYPOINT ["java","-jar","Domain_A_Service.jar"]
+
+Docker Commands
+------------------
+$ docker -v
+$ docker build -f Dockerfile -t Domain_A_Service .  (command to build image - execute the command in the workspace directory only)
+-> This command is used to build an image (Domain_A_Service image name) using the file Dockerfile in current directory . t-tag	
+$ docker images
+$ docker run -p 8080:8085 Domain_A_Service (Command to run the image)
+-> Run the image Domain_A_Service on port 8085 where the spring boot application is running on port 8085.p-publish

@@ -1,0 +1,38 @@
+Config Server
+===============
+Dependencies
+--------------
+Config Server
+Sleuth
+Zipkin
+
+application.properties
+------------------------
+spring.application.name=config-service
+server.port=5123
+HOME=C:/Users/rasoolansaris/Desktop
+#spring.cloud.config.server.git.uri=${HOME}/git-config-location
+spring.profiles.active=native
+#spring.cloud.config.server.native.search-locations=classpath:/config-service-configurations
+spring.cloud.config.server.native.search-locations=file:///${HOME}/demo-1109
+logging.file=logs/config-service.log
+
+Annotations
+-------------
+@EnableConfigServer
+
+@Bean
+public Sampler defaultSampler() {
+	return Sampler.ALWAYS_SAMPLE;
+}
+
+URL
+-----
+
+
+***
+----
+Sleuth -> [application name, traceId, spanId, export]
+
+
+
