@@ -1,0 +1,41 @@
+Unit testing
+->
+
+Test fixture
+-> A test fixture is a context where a Test Case runs. Typically, test fixtures include:
+   - Objects or resources that are available for any test case.
+   - Activities required that makes these objects/resources available.
+   - These activities are
+      - allocation (setup)
+      - de-allocation (teardown).
+	  
+Setup & Tear down
+-> 
+
+Annotations
+->
+@Test
+@Test(timeout=500)
+@Test(expected=IllegalArgumentException.class)
+@Before
+@After
+@BeforeClass
+@AfterClass
+@Ignores
+@RunWith
+@SuiteClasses
+@Suite.SuiteClasses
+
+Assert methods
+-> assertEquals, assertTrue, assertFalse, assertNull, assertNotNull, assertSame, assertNotSame, fail
+
+TestCase, TestResult, TestSuite *** Are these in latest version?
+->
+
+Assert
+-> Assert is a class which provides a bunch of assertion methods useful in determining Pass or Fail status of a test case
+
+
+ 
+
+	  
