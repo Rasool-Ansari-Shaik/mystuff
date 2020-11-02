@@ -1,0 +1,227 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Api Documentation",
+    "version": "1.0.1",
+    "title": "Api Documentation",
+    "termsOfService": "urn:tos",
+    "contact": {},
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "localhost:8088",
+  "basePath": "/",
+  "paths": {
+    "/patient/match/{contractnumber}/{dataStore}": {
+      "post": {
+        "tags": [
+          "patient match service"
+        ],
+        "summary": "This resource represents Patient Match",
+        "operationId": "doPatientMatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractnumber",
+            "in": "path",
+            "description": "aka client name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dataStore",
+            "in": "path",
+            "description": "dataStore",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "algorithmName",
+            "in": "query",
+            "description": "This can be list of algorithm to be executed for patient match. Use * to execute patient match with all algorithm",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Resource",
+            "description": "This is patient resource which need match",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Bundle"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Patient Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Resource": {
+      "type": "object",
+      "properties": {
+        "patient.identifier": {
+          "type": "string",
+          "description": "This is patient external identifier"
+        },
+        "patient.subscriber": {
+          "type": "string"
+        },
+        "patient.given": {
+          "type": "string",
+          "description": "Includes first name"
+        },
+        "patient.family": {
+          "type": "string",
+          "description": "Family name (often called 'Surname')"
+        },
+        "patient.finitial": {
+          "type": "string",
+          "description": "Includes first initial"
+        },
+        "patient.ssn": {
+          "type": "string",
+          "description": "This is patient social security number"
+        },
+        "patient.postalCode": {
+          "type": "string",
+          "description": "A postal code designating a region defined by the postal service."
+        },
+        "patient.phoneNumber": {
+          "type": "string"
+        },
+        "patient.birthDate": {
+          "type": "integer",
+          "format": "date",
+          "example": "mm/dd/yyyy",
+          "description": "The date of birth for the patient."
+        },
+        "patient.sourceId": {
+          "type": "string",
+          "description": "Source system for the patient."
+        },
+        "payer.name": {
+          "type": "string",
+          "description": "Payer"
+        },
+        "application.name": {
+          "type": "string",
+          "description": "Name of calling application."
+        }
+      },
+      "title": "PatientResource"
+    },
+    "Bundle": {
+      "type": "object",
+      "description": "A bundle contain a set of Patient records that represent matches, with additional information about the search.",
+      "properties": {
+        "entry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entry"
+          }
+        }
+      }
+    },
+    "Entry": {
+      "type": "object",
+      "description": "An entry in a bundle resource - will either contain a resource or information about a resource",
+      "properties": {
+        "resource": {
+          "$ref": "#/definitions/MatchResource"
+        },
+        "search": {
+          "$ref": "#/definitions/Search"
+        },
+        "response": {
+          "$ref": "#/definitions/response"
+        }
+      }
+    },
+    "Search": {
+      "type": "object",
+      "properties": {
+        "algorithm.name": {
+          "type": "string",
+          "description": "This is algorithm name use for patient match"
+        },
+        "dataStore": {
+          "type": "string",
+          "description": "Name of datastore use for patient match"
+        },
+        "application.name": {
+          "type": "string"
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "HTTP response status code for match"
+        },
+        "message": {
+          "type": "string",
+          "description": "HTTP response status message for match"
+        }
+      }
+    },
+    "MatchResource": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "patient.id": {
+            "type": "integer"
+          },
+          "patient.masterId": {
+            "type": "integer"
+          },
+          "match.score": {
+            "type": "integer"
+          },
+          "match.dateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source.name": {
+            "type": "string",
+            "description": "This is sendingApplication name"
+          },
+          "patient.attributes": {
+            "description": "Return Key/Value pair of criteria use for the match",
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+Recordings
+============
+https://vbc-confluence.watson-health.ibm.com/display/VWPGMNF/Modernization+-+Outreach
+
+1) Webex Recording session:
+Server infrastructure, Deployment of WEB/API in DEV & QA, 
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/81941d834ce5475e9aabd9e9823971ae
+Password: Jjm97YCR
+
+2) ATC business requirements and epics walkthrough - by Neha
+https://ibm.webex.com/recordingservice/sites/ibm/recording/play/f3913e6e5a584cb8b750f538ff091f7c
+Password: uGkMdXE8
+
+3) ATC Design discussion on 27-Mar-2020 - by Rajan
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/3442a73dd5c748c29f5aaa001a134113
+Password: tTHPmeK5
+
+4) CommEngine - Genesys SMS on 30-Mar-2020 - by Kolitha
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/99b0a1b388984e9ca33a8c7818c5f9f1
+Password: iDsna3wj
+
+5) CommEngine - Kafka - IBM functions on 30-Mar-2020 - by Kolitha
+23kY5DsV
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/a6a94b3742bf4d78be5a2fd47449b00b
+
+6) CommEngine - Process ATC messages (the front door) on 31-Mar-2020 - by Kolitha
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/e6e84445eeb04a8bac3147904fc91dcb
+Password: gUi3gH7i
+
+7) CommEngine - Shellscript - pattern and practices to follow on 1-Apr-2020 - by Kolitha
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/3a2565454e054ffea044e898007b76f5
+Password: sJ3W9tKF
+
+8) HRI service recordings
+https://vbc-confluence.watson-health.ibm.com/display/WPD/Sprint+Documentation
+
+9) Circuit breaker & retry implementation
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/374d84a373a3404e871994df1b3037a3
+5MtMuPEM
+
+10) Initiative 1 - discussion with team & Fault Tolerance
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/b201db7d1acb46b88643c0800cd0141c
+YbKqDvP5
+
+11) Attribution Model
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/dd215756633746a0b54e2477beedcec7
+226Nbryv
+
+12) CICD session with Maddy Goss - Cloud Functions - Kolitha
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/91acb0765e244f779258c647c9d50fd5
+sVnvfPQ5
+
+13) FHIR Extensions - Suman
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/bdab711f08d649b3b23f238568e535c5
+eR4982sP
+
+14) CICD - Sonarcube discussion with DevOps team - Maddy - 7-5-2020
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/a273221aef144e78ac356e8eb1af01f8
+pSPd9Tbr
+
+15) Comm engine front door discussion - Kolitha - 6-5-2020
+qJ6i6mJd
+https://ibm.webex.com/recordingservice/sites/ibm/recording/play/d96215c2afd84b5e8f87c75537e2a82b
+
+16) comm engine - cd - approach discussion - Kolitha - 8-5-2020
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/8ca2c806a94d48b4b4d8ede14ba960c3
+Mskpgdf8
+
+17) CI/CD design review - Phytel - communication engine - Maddy 20200617
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/4490fce045bf4db7830b127b5d0f0599
+5BdhhnKA
+
+18) Flink job CICD - Internal by Me - 20200617 
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/18b9a333eb59415b98de6aaa68ddbc1d
+qH5prftA
+
+19) WH Design and Patterns - AG presentation by IBM - 20200619
+https://ibm.ent.box.com/s/grbe2rdy1404isashlts3kt31qire2wd
+
+20) Data Model discussion - by Neha - 20200619
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/31d2d4eaf3ff4861a0e3c90910d15dfd
+nEmHr8n3
+
+21) Discussion with Maddy on Integration of Sonarcube and Appscan in CI pipeline - 20200626
+https://ibm.webex.com/webappng/sites/ibm/recording/play/3e867ab9005b480f81e0300449ca8937
+gSrg5w5f
+
+22) App Framework User Management & App Registry - 20200623
+https://ibm.ent.box.com/s/93ms5mm06gmhaozvb864elck50v5m1hc
+
+23) on-boarding and integration process with App Framework - David Lau - 20200708
+Recording: https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/54290fdd3d014d6287ee71d93125b984
+Password: EiHJSpq7
+
+24) Centaur - tech connect - git KT - 30JUN2020
+https://ibm.webex.com/recordingservice/sites/ibm/recording/playback/e3686835fa314ba4b5a0bc1ac86f0845
+YySV665w
+

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient-match
+  labels:
+    app.name: patient-match
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.name: patient-match
+  template:
+    metadata:
+      labels:
+        app.name: patient-match
+    spec:
+      containers:
+        - name: patient-match-dev
+          image: "phyteldev.icp:8500/default/patient-match:dev1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8088
+              protocol: TCP

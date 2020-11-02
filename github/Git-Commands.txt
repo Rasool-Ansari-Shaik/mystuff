@@ -1,0 +1,58 @@
+git clone -b develop https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/DAL-WH-Services/patient-match.git
+
+git add *
+
+git status
+
+git commit -m "Sprint-2 UserStories"
+
+git push origin
+
+
+
+
+git clone -b demo-development https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/DAL-WH-Services/patient-demographic
+
+git clone -b commhistory-development https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/DAL-WH-Services/patient-commhistory
+
+git clone -b careopps-development https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/DAL-WH-Services/patient-careopps
+
+git clone -b develop-hydra https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/DAL-WH-Services/EMR-Widget
+
+
+git branch
+git checkout demo-development-v2
+git status
+git merge demo-development-v3
+git status
+git push
+git diff demo-development-v3
+git diff demo-development-v3 --name-status 
+git diff demo-development-v2..demo-development-v3
+
+git rm -r *
+git commit -m "..."
+git push 
+
+git push --set-upstream origin <remote-branch-name> 
+-> to push the local branch changes to remote branch name if there is no upstream branch mapped
+
+
+git clone -b develop https://rashaik:458264776fbfc9f1b330e4a7cda776f9c37649e7@github.ibm.com/rashaik/hello-world.git
+
+ff7a9b8a47a2aefea2dfd174df11e96d05efd53b
+
+Git Token: f98db597338aade1b3e0f892448a5f2ca292cf35
+
+
+https://github.ibm.com/modern-poc/hello-world.git
+https://github.ibm.com/modern-poc/modern-poc-umbrella.git
+
+
+https://rashaik4:f98db597338aade1b3e0f892448a5f2ca292cf35@github.ibm.com/modern-poc/hello-world.git
+
+helloworld-ns
+cluster-ns-1a
+
+API key: tzQ4hvSjXfamm5PSyAQY9MgP_PQukPo5nHa0vEnaUkZD
+

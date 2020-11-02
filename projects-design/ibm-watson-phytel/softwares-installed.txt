@@ -1,0 +1,29 @@
+nifi - Done
+sts - Done
+7zip - Done
+apache maven - Done 
+Desktop docker - Done
+forticlient - Done
+git - Done
+IBM java- Done
+Oracle java - NO
+nodeJS - Done
+Notepad++ - Done
+Postman - Done
+RabbitmQ
+Visual Studio Code - Done
+Kafka 
+Liquibase
+AppScan
+Kubernetes
+GitFlow
+JUnit
+Mockito
+Power Mockito
+XUnit
+
+IBM Cloud Cli
+--------------
+ibmcloud 
+ibmcloud cs
+ibmcloud ks

@@ -1,0 +1,114 @@
+React JS Deployment commands
+==============================
+ibmcloud login --sso
+ibmcloud target -r us-south
+ibmcloud target -o rashaik@us.ibm.com -s dev
+ibmcloud app push phyel-react-app
+
+More Commands:
+ibmcloud target --cf
+ibmcloud account org-create rashaik
+ibmcloud account space-create rashaik
+ibmcloud target -o rashaik -s rashaik
+
+Install the IBM Cloud Kubernetes Service plug-in.
+=================================================
+ibmcloud plugin install container-service -r "IBM Cloud"
+
+Install the Container Registry plug-in.
+=======================================
+ibmcloud plugin install container-registry -r "IBM Cloud"
+
+Create the cluster, specifying the name of cluster.
+===================================================
+ibmcloud cs cluster-create --name <cluster name>
+ex: ibmcloud cs cluster-create --name mycluster-test1
+
+To see the progress of your cluster creation, use the following command.
+=========================================================================
+ibmcloud cs clusters
+
+Create the API key, using the string provided for your key name.
+================================================================
+ibmcloud iam api-key-create <my api key name>
+ex: ibmcloud iam api-key-create api-key-test2
+
+Create a namespace by using the container registry command line.
+================================================================
+ibmcloud cr namespace-add <my namespace>
+ex: ibmcloud cr namespace-add namespace-test2
+
+Ensure that you're targeting the correct IBM Cloud Container Registry region.
+=============================================================================
+ibmcloud cr region-set us-south
+
+Setup Kubectl and Configure it to Cluster
+==========================================
+1. Log in to the IBM Cloud CLI
+ibmcloud login -a https://cloud.ibm.com -u passcode -p <?>
+2. List all clusters in the account
+ibmcloud ks cluster ls
+3. Configure Kubernetes service with Cluster
+ibmcloud ks cluster config --cluster <cluster_name_or_ID>
+4. set the KUBECONFIG environment variable given in the terminal
+ex: SET KUBECONFIG=C:\Users\RasoolAnsariShaik\.bluemix\plugins\container-service\clusters\mycluster\kube-config-hou02-mycluster.yml
+5. Verify that the kubectl commands run properly
+kubectl version --short
+
+Docker Tag application image
+=============================
+docker tag hello-world us.icr.io/<my_namespace>/<my_repository>:<my_tag>
+ex: docker tag hello-world:v1 us.icr.io/namespace-test1/hello-world:v1
+
+Docker Push image to IBM Cloud
+===============================
+docker push us.icr.io/<my_namespace>/<my_repository>:<my_tag>
+ex: docker push us.icr.io/namespace-test1/hello-world:v1
+
+Docker Login
+=============
+docker login us.icr.io
+
+Container Registry Login
+===========================
+ibmcloud cr login
+
+Use IAM API Key
+================
+docker login -u iamapikey
+-> API Key as password
+
+To see worker nodes in the cluster
+===================================
+ibmcloud cs workers mycluster
+
+IBM Cloud API Key
+-----------------
+apikey-test1: nE0lDIB8AFUGyPJgjAa9kxPFw7eHV2CUayeXyLFw-zoI
+api-key-test2: F_GyDXu5y-3uMKmiKlczE5iFwC0Gq-x5ks2ctIT63g-i
+
+Reference: 
+----------
+https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource
+
+Create Tiller Account: https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/sandbox-cluster/sandbox-cluster.html
+
+
+ibmcloud login -a https://cloud.ibm.com -u passcode -p LUxfFJOMef
+ibmcloud plugin install cloud-object-storage
+ibmcloud plugin show cloud-object-storage
+
+ibmcloud resource service-instance-create <instance-name> cloud-object-storage <plan> global
+ibmcloud resource service-instance-create cos-rc-cli cloud-object-storage Standard global
+
+ibmcloud target -g RESOURCE_GROUP
+ibmcloud target -g Default
+
+ibmcloud resource service-instance-create <instance-name> cloud-object-storage <plan> global
+ibmcloud resource service-instance-create cos-rc-cli cloud-object-storage Lite global
+
+ibmcloud cos create-bucket --bucket BUCKET_NAME [--class CLASS_NAME] [--ibm-service-instance-id ID] [--region REGION] [--json]
+ibmcloud cos create-bucket --bucket cos-rc-cli-buck-standard-v1 --class Standard --ibm-service-instance-id cos-rc-cli --region us-south --json
+
+
+crn:v1:bluemix:public:cloud-object-storage:global:a/fdc28b9ee4fb404da39e3ec7f99666d1:ca3797f5-77dc-42ea-908d-4c3303b4334b:: ca3797f5-77dc-42ea-908d-4c3303b4334b

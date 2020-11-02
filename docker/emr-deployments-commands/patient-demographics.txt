@@ -1,0 +1,69 @@
+1) Check Java installed
+$ java -version
+
+2) Check Docker installed
+$ docker -v
+
+3) Check Git installed
+$ git --version
+
+4) Check Maven installed
+$ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/
+$ mvn --version
+
+5) Copy "patient-demographics" from windows VDI to Linux VRA using WinSCP
+
+6) Go to "patient-demographics" folder in Putty
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/patient-demographics-data-service
+
+7) Build the application using maven
+$ mvn clean install -DskipTests=true
+
+8) Check Cloudctl installed
+$ /usr/local/bin/cloudctl login -a https://10.231.186.12:8443 --skip-ssl-validation
+$ /usr/local/bin/cloudctl api
+
+9) Check Kubectl installed
+/usr/local/bin/kubectl config set-cluster phyteldev --server=https://10.231.186.12:8001 --insecure-skip-tls-verify=true
+/usr/local/bin/kubectl config set-context phyteldev-context --cluster=phyteldev
+/usr/local/bin/kubectl config set-credentials admin --token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiODc1YTk3MzBmOTc1NGQxZmM1MTgyN2FiY2EyMDkwN2UzZmNiYTZjOCIsInJlYWxtTmFtZSI6ImN1c3RvbVJlYWxtIiwidW5pcXVlU2VjdXJpdHlOYW1lIjoiYWRtaW4iLCJpc3MiOiJodHRwczovLzEyNy4wLjAuMTo4NDQzL2lkYXV0aC9vaWRjL2VuZHBvaW50L09QIiwiYXVkIjoiODEzYjUwOWYxMzVjNGYxNTE5NzJmZmU1YWI3MzZmZTIiLCJleHAiOjE1NzUzMzM0MTgsImlhdCI6MTU3NTMzMzQxOCwic3ViIjoiYWRtaW4iLCJ0ZWFtUm9sZU1hcHBpbmdzIjpbXX0.cxIklAkY5SfExzUH46aQ8C93iJTfS8GI3_zDkKcOhTTpOqQrcWflk0Woe3qZNJ3w8AzU9T9LuYnat1wdFAqEWm3j4__xeGZxXMNYJmdRnt0bVPHnXEfvNZv-JquT47q8wKMXWdDxKQlkJUo-rts9Mbvrh80hB9wOvoT7tjh4IPEVE9i9cV11c8zjsyoMdpBMpMysl9jNV39cIrAydrQwbf8UTLmGq7LChJNLn8YRBhKBuOTNPZj9UfCzF7F8bAlMUS9qTcRglCmhWyUSpTMPO4HLlepKitefrV4bw-fV91KFpzclVSSyySYqK2XNhYzlrr9d56LdDEifq-kBjtqF2A
+/usr/local/bin/kubectl config set-context phyteldev-context --user=admin --namespace=default
+/usr/local/bin/kubectl config use-context phyteldev-context
+
+
+/usr/local/bin/kubectl cluster-info
+
+10) Docker login to ICP
+$ docker login phyteldev.icp:8500
+
+11) Build docker image for "demo-test"
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/patient-demographics-data-service
+$ docker build -t patient-demographics:dev2.1 .
+
+12) Check image created or not
+$ docker images
+
+13) Tag application image
+$ docker tag patient-demographics:dev2.1 phyteldev.icp:8500/default/patient-demographics:dev2.1
+
+14) Push image to ICP
+$ docker push phyteldev.icp:8500/default/patient-demographics:dev2.1
+
+15) Check the image available in ICP. Click on "Container Images". "patient-demographics" should be available in ICP.
+
+16) Deploy "patient-demographics" using helm
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/patient-demographics-data-service
+$ /usr/local/bin/helm install --name patient-demographics-dev2.1 --namespace default patient-demographics-chart
+
+8) To check the logs
+$ /usr/local/bin/kubectl logs --follow <pod_name>
+/usr/local/bin/kubectl logs --follow patient-demographics-846c5cb765-fhm6c
+
+----------------------
+
+17) To see all list of helm deployments
+$ /usr/local/bin/helm ls
+
+18) To delete helm deployment
+$ /usr/local/bin/helm del --purge patient-demographics-dev2.1
+

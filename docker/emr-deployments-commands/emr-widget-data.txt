@@ -1,0 +1,72 @@
+1) Check Java installed
+$ java -version
+
+2) Check Docker installed
+$ docker -v
+
+3) Check Git installed
+$ git --version
+
+4) Check Maven installed
+$ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/
+$ mvn --version
+
+5) Copy "emr-widget-data-service" from windows VDI to Linux VRA using WinSCP
+
+6) Go to "emr-widget-data-service" folder in Putty
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/emr-widget-data-service
+
+7) Build the application using maven
+$ mvn clean install -DskipTests=true
+
+8) Check Cloudctl installed
+$ /usr/local/bin/cloudctl login -a https://10.231.186.12:8443 --skip-ssl-validation
+$ /usr/local/bin/cloudctl api
+
+9) Check Kubectl installed
+/usr/local/bin/kubectl config set-cluster phyteldev --server=https://10.231.186.12:8001 --insecure-skip-tls-verify=true
+/usr/local/bin/kubectl config set-context phyteldev-context --cluster=phyteldev
+/usr/local/bin/kubectl config set-credentials admin --token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiYWY5NDU1YjAxMjNhN2RlZTY3OTEwYzJhZWY3MWViYWI5M2M4OTU4YiIsInJlYWxtTmFtZSI6ImN1c3RvbVJlYWxtIiwidW5pcXVlU2VjdXJpdHlOYW1lIjoiYWRtaW4iLCJpc3MiOiJodHRwczovLzEyNy4wLjAuMTo4NDQzL2lkYXV0aC9vaWRjL2VuZHBvaW50L09QIiwiYXVkIjoiODEzYjUwOWYxMzVjNGYxNTE5NzJmZmU1YWI3MzZmZTIiLCJleHAiOjE1NzUzNDYzNjQsImlhdCI6MTU3NTM0NjM2NCwic3ViIjoiYWRtaW4iLCJ0ZWFtUm9sZU1hcHBpbmdzIjpbXX0.zIXaXG6uT_pvzPK-d_KCLCZJfnUVCIL_PyzrfJ_wnPs4Cq6reP0xK2Q7Te_TjN7XwtuMYECQ-ZOng0Ls2Nh3d-B5Xg9_sQSYWRvJ976q8Gcys7G0Wi6H2LcfmuHqdqpT46PF8aBZqYJ5ja6ViHGa0EUX64t8MgnP-H1wSku5A_toyPxC6XqwcDMjBuN5jVC0DTG-oh8Ncrj9d73pP55iJXye7fQA8SNulN8XkDZZEQ2RHP5eVjAY38e4lRLMYxCBybgh3NhUZoPYiZW6eySmnVD2NrG-wWfEnaVVzgCA6veQrDffEi__-_YOWV1CqeU7WwjeImjPWikW-c8_bRqPiQ
+/usr/local/bin/kubectl config set-context phyteldev-context --user=admin --namespace=hydra-dev
+/usr/local/bin/kubectl config use-context phyteldev-context
+
+change namespace to "hydra-dev"
+
+/usr/local/bin/kubectl cluster-info
+
+10) Docker login to ICP
+$ docker login phyteldev.icp:8500
+
+11) Build docker image for "demo-test"
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/emr-widget-data-service
+$ docker build -t emr-widget-data:dev2.1 .
+
+12) Check image created or not
+$ docker images
+
+13) Tag application image
+$ docker tag emr-widget-data:dev2.1 phyteldev.icp:8500/hydra-dev/emr-widget-data:dev2.1
+
+14) Push image to ICP
+$ docker push phyteldev.icp:8500/hydra-dev/emr-widget-data:dev2.1
+
+15) Check the image available in ICP. Click on "Container Images". "emr-widget-data" should be available in ICP.
+
+16) Deploy "emr-widget-data" using helm
+$ cd /home/c-pwmc/deployments/emr/sprint2/20191202/emr-widget-data-service
+$ /usr/local/bin/helm install --name emr-widget-data-dev2.1 --namespace hydra-dev emr-widget-data-chart
+
+8) To check the logs
+$ /usr/local/bin/kubectl logs --follow <pod_name>
+/usr/local/bin/kubectl logs --follow patient-demographics-846c5cb765-fhm6c
+
+----------------------
+
+17) To see all list of helm deployments
+$ /usr/local/bin/helm ls
+
+18) To delete helm deployment
+$ /usr/local/bin/helm del --purge patient-demographics-dev2.1
+
+
+http://10.229.170.7:30192/patient/emrwidget/data/apollo/NGEN?patientId=94F28E07-959D-494C-9BAC-7BA5CC9695D8

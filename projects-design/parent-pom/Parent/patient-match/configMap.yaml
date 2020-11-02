@@ -1,0 +1,125 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: patient-match
+data:
+  application.yml: |-
+    spring:
+      profiles: dev
+    patient:
+      match:
+        algorithms: discharge,claims
+        algorithm:
+          discharge:
+            enabled: true
+            criteria:
+              sequence: 1,3,5
+          claims:
+            enabled: true
+            criteria:
+              sequence: 3,4,6
+        response:
+          save:
+            sqlquery: 'INSERT INTO [Patient].[PatientMatchResult] (PatientID,  MasterPatientID,  Score, SourceName, PatientAttribute, AlgorithmName, Datastore, ApplicationName, CreateDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+              
+    confidence:
+      max: 90
+    
+    criteria:
+      '1':   # Match Confidence = Max + 1 
+        attributes: 'patient.sourceId,patient.identifier'
+        confidence: '${confidence.max}+10'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxPlusOne] WHERE ExternalPatientId=<patient.identifier> and SendingApplication=<patient.sourceId>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxPlusOne] WHERE SourceSystemName=<patient.sourceId> and ExternalID=<patient.identifier>'
+      '3':   # Match Confidence = Max - 1
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.ssn,patient.postalCode'
+        confidence: '${confidence.max}-10'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusOne] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusOne] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+      '4':   # Match Confidence = Max - 2
+        attributes: 'patient.finitial,patient.family,patient.birthDate,patient.ssn,patient.postalCode'
+        confidence: '${confidence.max}-20'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusTwo] WHERE FInitial = <patient.finitial> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusTwo] WHERE FInitial = <patient.finitial> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+      '5':   # Match Confidence = Max - 3
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.ssn'
+        confidence: '${confidence.max}-30'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusThree] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusThree] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn>'
+      '6':   # Match Confidence = Max - 4
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.phoneNumber'
+        confidence: '${confidence.max}-40'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusFour] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and PhoneNumber = <patient.phoneNumber>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusFour] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and PhoneNumber= <patient.phoneNumber>' 
+    
+        
+    ---
+    spring:
+      profiles: qa
+    patient:
+      match:
+        algorithms: discharge,claims
+        algorithm:
+          discharge:
+            enabled: true
+            criteria:
+              sequence: 1,3,5
+          claims:
+            enabled: true
+            criteria:
+              sequence: 3,4,6
+        response:
+          save:
+            sqlquery: 'INSERT INTO [Patient].[PatientMatchResult] (PatientID,  MasterPatientID,  Score, SourceName, PatientAttribute, AlgorithmName, Datastore, ApplicationName, CreateDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+              
+    confidence:
+      max: 90
+    
+    criteria:
+      '1':   # Match Confidence = Max + 1 
+        attributes: 'patient.sourceId,patient.identifier'
+        confidence: '${confidence.max}+10'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxPlusOne] WHERE ExternalPatientId=<patient.identifier> and SendingApplication=<patient.sourceId>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxPlusOne] WHERE SourceSystemName=<patient.sourceId> and ExternalID=<patient.identifier>'
+      '3':   # Match Confidence = Max - 1
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.ssn,patient.postalCode'
+        confidence: '${confidence.max}-10'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusOne] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusOne] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+      '4':   # Match Confidence = Max - 2
+        attributes: 'patient.finitial,patient.family,patient.birthDate,patient.ssn,patient.postalCode'
+        confidence: '${confidence.max}-20'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusTwo] WHERE FInitial = <patient.finitial> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusTwo] WHERE FInitial = <patient.finitial> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn> and MailCode = <patient.postalCode>'
+      '5':   # Match Confidence = Max - 3
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.ssn'
+        confidence: '${confidence.max}-30'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusThree] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusThree] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and NationalID = <patient.ssn>'
+      '6':   # Match Confidence = Max - 4
+        attributes: 'patient.given,patient.family,patient.birthDate,patient.phoneNumber'
+        confidence: '${confidence.max}-40'
+        contactentities:
+          sqlquery:  'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SendingApplication] as SourceName FROM [dbo].[vw_PatientMatchMaxMinusFour] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and PhoneNumber = <patient.phoneNumber>'
+        patientmpi:
+          sqlquery: 'SELECT [ID] as PatientId,[MasterPatientID] as MasterId,[SourceSystemName] as SourceName FROM [patient].[vw_PatientMatchMaxMinusFour] WHERE FirstName = <patient.given> and LastName=<patient.family> and DateOfBirth = <patient.birthDate> and PhoneNumber= <patient.phoneNumber>' 
+    
+      
