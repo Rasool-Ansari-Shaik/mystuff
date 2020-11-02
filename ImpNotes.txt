@@ -1,0 +1,469 @@
+Imp Notes
+==========
+1) Kubernetes Deployment Strategies
+https://blog.container-solutions.com/kubernetes-deployment-strategies
+
+2) Kubernetes Deployments
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+3) Maven tutorials
+https://www.tutorialspoint.com/maven/index.htm
+
+4) Apache NiFi docker
+https://hub.docker.com/r/apache/nifi
+https://pages.github.ibm.com/wffh/nifi-umbrella/#getting-started/
+https://github.ibm.com/wffh/nifi-umbrella
+https://github.ibm.com/wffh/nifi-umbrella/blob/0d4596ca6ab9c2e2374eae3b5198931fef45a6d4/docs/getting-started.md#optional-setup-cloud-object-storage-instance-to-support-shared-volume
+https://github.ibm.com/wffh/nifi-umbrella/releases/tag/v1.11.4-16
+https://github.ibm.com/wffh/nifi-umbrella/releases/tag/v1.11.4-18
+https://nifi-cdt-provider-engmnt-ns-01.wh-engmnt.dev.watson-health.ibm.com/nifi
+https://nifi.apache.org/docs/nifi-docs/html/user-guide.html
+https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
+https://github.ibm.com/wffh/nifi-releasectl
+https://pages.github.ibm.com/wffh/nifi-umbrella/examples/
+https://github.com/apache/nifi/tree/master/nifi-nar-bundles/nifi-hl7-bundle/nifi-hl7-processors
+https://pages.github.ibm.com/wffh/nifi-umbrella/audit
+https://nifi.apache.org/
+https://nifi.apache.org/docs/nifi-docs/html/overview.html
+https://nifi.apache.org/docs.html
+
+5) Liquibase
+https://www.liquibase.org/get_started/lb-setup-tutorial.html
+
+6) Helm Chart
+https://helm.sh/
+https://helm.sh/docs/chart_template_guide/
+https://helm.sh/docs/
+https://hub.helm.sh/
+https://docs.bitnami.com/tutorials/create-your-first-helm-chart/
+
+7) Watson health play book
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/csmo/servicesupport/wh-fa/
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/sandbox-cluster/sandbox-cluster.html
+
+8) Kubernetes Tutorials
+https://kubernetes.io/docs/concepts/overview/components/
+https://kubernetes.io/docs/tutorials/hello-minikube/
+https://cloud.ibm.com/docs/containers?topic=containers-getting-started
+https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane
+https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/ 
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/application-properties/application-properties.html 
+-> override.yaml
+
+9) GitFlow workflow
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+10) Cloud object storage web application
+https://cloud.ibm.com/docs/services/cloud-object-storage/libraries?topic=cloud-object-storage-java
+https://cloud.ibm.com/docs/services/cloud-object-storage/tutorials?topic=cloud-object-storage-web-application
+
+11) IBM Cloud Functions
+https://github.com/apache/openwhisk-wskdeploy/blob/master/docs/programming_guide.md#guided-examples
+https://github.com/apache/openwhisk-wskdeploy/tree/master/specification#openwhisk-packaging-specification
+https://cloud.ibm.com/apidocs/functions?code=node#fire-a-trigger
+https://medium.com/openwhisk/uncovering-the-magic-how-serverless-platforms-really-work-3cb127b05f71
+https://openwhisk.apache.org/
+https://openwhisk.apache.org/documentation.html
+https://github.com/apache/openwhisk
+https://thenewstack.io/behind-scenes-apache-openwhisk-serverless-platform/
+https://www.serverless.com/framework/docs/providers/openwhisk/
+
+12) Spring Cloud Functions
+https://cloud.spring.io/spring-cloud-function/reference/html/openwhisk.html
+
+13) Kubernetes Namespace
+https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+
+14) Install Linux on Windows with Windows Subsystem for Linux
+https://www.dataquest.io/blog/tutorial-install-linux-on-windows-wsl/
+
+15) Quarkus
+https://quarkus.io/
+
+16) Apache OpenWhisk
+https://openwhisk.apache.org/documentation.html
+
+17) Serverless framework
+https://serverless.com/framework/docs/providers/openwhisk/guide/intro/
+https://www.oreilly.com/library/view/learning-apache-openwhisk/9781492046158/ch01.html
+
+18) Hub
+https://hub.github.com/
+
+19) Shell Scripts used by Stable-207 CICD pipeline
+https://github.ibm.com/whc-toolchain/whc-commons/tree/stable-207/scripts
+https://github.ibm.com/whc-toolchain/whc-commons/tree/stable-207-hri
+https://github.ibm.com/whc-toolchain/whc-commons/blob/stable-208/scripts
+
+20) JIRA
+https://jsw.ibm.com/secure/Dashboard.jspa
+
+21) JFrog Artefactory
+https://na.artifactory.swg-devops.com/artifactory
+https://www.jfrog.com/confluence/display/JFROG/Maven+Repository
+https://github.ibm.com/IBM-WH-ENGMNT/use-artifactory
+JFrog API key: AKCp5ekcUyqBCCcSfb6nHj1uFbT3SAHiYAqucyW8zt96bPEiEAuwAUWS42woHDdmxJAReC3A3
+New API key: AKCp5emRKwuP9unc5v1fmsRZsXGK647TFsySoQDxDbEotVNajgUbX9cGUx9PXnaipgmBamct1
+
+Pull Artifact from JFrog
+curl -u ${ARTIFACTORY_USER_NAME}:${ARTIFACTORY_API_KEY} -O "${JFROG_ARTIFACTORY}/${file}-${RELEASE_VERSION}.jar"
+
+Push Artifact to JFROG
+mvn clean package --settings settings.xml -Dusername=${ARTIFACTORY_USER_NAME} -Dpassword=${ARTIFACTORY_API_KEY}
+curl -u ${ARTIFACTORY_USER_NAME}:${ARTIFACTORY_API_KEY} -T ./target/${JAR_PACKAGE}*.jar "${JFROG_ARTIFACTORY}/${JAR_PACKAGE}-${RELEASE_VERSION}.jar"
+
+ex: 
+curl -u rashaik4@in.ibm.com:${ARTIFACTORY_API_KEY} -T ./target/cf-capitialize.jar "https://na.artifactory.swg-devops.com:443/artifactory/wh-phytel-unicorn-team-maven-local/cf-capitialize-1.0.0.jar"
+
+curl -u rashaik4@in.ibm.com:${ARTIFACTORY_API_KEY} -O "https://na.artifactory.swg-devops.com/artifactory/wh-phytel-unicorn-team-generic-local/cf-capitialize-1.0.0.jar"
+
+22) LogDNA & Activity Tracker
+https://cloud.ibm.com/docs/Log-Analysis-with-LogDNA?topic=LogDNA-kube
+https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#serverless
+
+Cloud Auditing Data Federation (CADF) standard
+
+23) IBM Streams with Apache NiFi
+https://developer.ibm.com/streamsdev/docs/integrating-ibm-streams-apache-nifi/
+https://www.ibm.com/cloud/blog/connecting-ibm-event-streams-to-apache-nifi
+https://pages.github.ibm.com/wffh/nifi-umbrella/examples/
+https://cloudacademy.com/blog/moving-data-to-s3-with-apache-nifi/
+https://nifi.apache.org/docs/nifi-docs/html/user-guide.html#Import_Template
+
+24) Event Streams
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-about&locale=en-US
+https://github.com/ibm-messaging/event-streams-samples
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-getting_started
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-cli
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-cli_reference
+https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
+https://hazelcast.com/glossary/event-stream-processing/
+https://cloud.ibm.com/docs/EventStreams/index.html
+
+Here are some good Kafka UIs to visualize topics and configurations
+https://www.xeotek.com/
+https://www.conduktor.io
+
+25) Commenting on a pull request
+https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request
+https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request
+
+26) Maven Shade plugin
+http://maven.apache.org/plugins/maven-shade-plugin/
+
+27) Flink
+https://github.ibm.com/Rajan-Gupta/flink-docker-compose
+https://github.ibm.com/wffh-hri/deploy/tree/master/hri/flink/chart/flink
+https://ci.apache.org/projects/flink/flink-docs-stable/getting-started/docker-playgrounds/flink-operations-playground.html   (very important to setup)
+https://github.ibm.com/josha/flink-kakfa-example
+https://github.com/apache/flink/tree/master/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples
+https://github.ibm.com/Rajan-Gupta/flink-kakfa-example
+
+28) Secret Key - 1Password
+A3-JYFC7Y-TM7X4S-LDRHE-6SEQ8-V4W79-5W6BV
+Master Password: 1qaz!QAZ@feB2020
+
+29) JangoSMTP
+Username=IBMPocAccount
+Password=IBMW@tsonH3alth
+https://jangosmtp.com/
+https://api.jangomail.com/
+
+30) YopMail
+yopmail.com 
+
+31) API Keys 
+GIT: f98db597338aade1b3e0f892448a5f2ca292cf35
+Personal Cloud: tzQ4hvSjXfamm5PSyAQY9MgP_PQukPo5nHa0vEnaUkZD
+CDT Cloud: TVUjsIznFlA9XtLSLRTLmuzFPRKIWtGcF3BKg-GhNhck   (CDT_RASHAIK_API_KEY_20200406)
+CDT Cluster name: CDT_Provider_ENGMNT_Cluster_01
+CDT Cluster Id: bp1gkpld0m4rqdknsa40
+CDT Cluster namespace: cdt-provider-engmnt-ns-01
+
+
+32) IBM Cloud DevOps Insights CLI
+https://cloud.ibm.com/docs/devops-insights-cli-plugin?topic=devops-insights-cli-plugin-CLI_devops-insights
+https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-aggregating-multiple-sources
+
+33) Box Notes
+https://ibm.ent.box.com/notes/624024087792
+https://ibm.box.com/s/kprskf4u73w8xjfdfvmniu98hz54ozfx  -> Patient Column Mapping
+
+34) Docker - Container Runtime Interface (CRI)
+https://docs.docker.com/engine/
+https://docs.docker.com/engine/reference/builder/
+https://we-are.bookmyshow.com/understanding-expose-in-dockerfile-266938b6a33d
+https://phoenixnap.com/kb/docker-image-vs-container
+Creds: rasool007kutty/1qaz!QAZ
+
+35) CRI-O
+https://cri-o.io/#what-is-cri-o
+
+36) ContainerD
+https://containerd.io/docs/
+
+37) JIOFI
+http://jiofi.local.html/
+
+38) Genesys SMS
+Username: bmwatsonhealth
+Password: LmP$04178!
+https://docs.genesys.com/Documentation/POR/2016CD/http/Appendix-Java
+
+39) Modernization Solution Architecture
+https://ibm.ent.box.com/file/639047562587
+https://app.lucidchart.com/documents/view/a0a43a94-d306-4d61-8497-0fa0dbb83a17/0_0
+
+ATC Draft Design v2.0 -> https://app.lucidchart.com/documents/edit/2fcce7b1-cdbf-4716-a432-607d5acc7fb9/pyO8DkW4Ds7s
+ATC Design v1.1 for Initiative 1-> https://app.lucidchart.com/documents/edit/2fcce7b1-cdbf-4716-a432-607d5acc7fb9/ipXRc6.~22Rv
+https://app.lucidchart.com/documents/edit/2fcce7b1-cdbf-4716-a432-607d5acc7fb9/BV9JPmmGvd2N
+
+Comm engine v1 : https://app.lucidchart.com/invitations/accept/da4a2141-3c9f-4dd5-b7e7-723f81bc48ef
+Comm engine v2 : https://app.lucidchart.com/invitations/accept/64f4fecc-7f47-483d-ac83-c4742e865ad4
+
+Phytel Data Model
+https://app.lucidchart.com/documents/edit/47ba767d-c9ca-42e2-a65b-3ba06e20b000/I2l0H5aSpgWS?shared=true&useCachedRole=false
+
+UIs
+High level flow: https://app.lucidchart.com/invitations/accept/050b861d-840b-4162-9220-9da05db8f6d3
+Authentication flow: https://app.lucidchart.com/invitations/accept/05f7cceb-8c42-4bf9-a95e-2c9382fdfda4
+
+Engagement Modernization Column Mapping
+https://ibm.ent.box.com/file/644532900325
+
+40) FHIR
+https://ibm.github.io/FHIR/guides/FHIRModelGuide/
+https://www.hl7.org/fhir/resourcelist.html
+https://github.com/IBM/FHIR/tree/master/fhir-model/src/main/java/com/ibm/fhir/model/resource
+https://build.fhir.org/ig/HL7/fhir-shorthand/tutorial.html
+https://github.com/IBM/FHIR/releases/tag/4.2.3
+https://hub.docker.com/r/ibmcom/ibm-fhir-server
+https://ibm.ent.box.com/folder/112585749664
+
+41) HRI service (HRIS)
+HRI documentation: https://pages.github.ibm.com/wffh-hri/docs/
+Source code, including initial work on Flink validation: https://github.ibm.com/wffh-hri/
+Slack channel: #wffh-health-record-ingestion
+https://github.ibm.com/wffh-hri/deploy/tree/master/hri/flink/chart/flink
+https://pages.github.ibm.com/wffh-hri/docs/deployment.html
+
+42) How to pass multiple parameters in shell script in Linux
+https://www.golinuxcloud.com/how-to-pass-multiple-parameters-in-shell-script-in-linux/
+
+43) Apache Commons - properties
+https://commons.apache.org/proper/commons-configuration/userguide_v1.10/howto_properties.html
+
+44) Watson Health Pipeline Design Structure
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/learn/dev-ops/pipeline-structure.html
+
+45) Meanings 
+Multitenancy -
+Multitenancy is a reference to the mode of operation of software where multiple independent instances of one or multiple applications operate in a shared environment. The instances (tenants) are logically isolated, but physically integrated.
+
+Low Latency -
+Low latency describes a computer network that is optimized to process a very high volume of data messages with minimal delay (latency). Latency means delay.
+
+Throughput -
+Throughput refers to how much data can be transferred from one location to another in a given amount of time. Throughput or network throughput is the rate of successful message delivery over a communication channel.
+
+FHIR - Fast Healthcare Interoperability Resources
+WFfH - Watson Foundation for Health
+
+fault-tolerance -
+Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components.
+
+46) JMH - Java Microbench Harness
+https://mkyong.com/java/java-jmh-benchmark-tutorial/
+http://tutorials.jenkov.com/java-performance/jmh.html
+https://openjdk.java.net/projects/code-tools/jmh/
+https://benchmarkdotnet.org/
+
+47) Education upskilling suggestion by Joshua
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/education.md
+
+48) Mural Boards
+https://app.mural.co/invitation/mural/suesilagisworkspace6408/1586268827613?sender=umeshv2042&key=8ca9fab9-16a5-4212-98e1-7b0633569ddc
+
+Initiative 3&4 Mural
+https://app.mural.co/t/phytelmodernization1703/m/phytelmodernization1703/1590690972326/126eff43d7db49c93b2d1baf1f99b392ffeec58f
+
+49) CICD K8S
+https://pages.github.ibm.com/whc-toolchain/whc-pipeline-links/index.html
+https://pages.github.ibm.com/watson-health-development/test-automation-guidance-docs/automation/toolchain-guidance/
+https://github.ibm.com/wh-ops/wh-ops-playbook/blob/master/_content/csmo/cloudprereqs/domainnames.md
+https://github.ibm.com/whc-toolchain/whc-worker-app-1
+https://vsupalov.com/docker-arg-vs-env/
+https://github.ibm.com/whc-toolchain/whc-commons
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/
+
+50) RTC for CIS Hostname
+https://nsjazz.raleigh.ibm.com:8050/ccm/web/projects/Watson%20Health%20Cloud%20%28Development%29#action=com.ibm.team.workitem.viewWorkItem&id=327069
+
+51) IBM Cloud learn
+https://www.ibm.com/cloud/learn
+
+52) Initiative epics in JIRA
+master link for all the initiatives : https://jsw.ibm.com/browse/WHPHYTELPF-15
+for initiative-1: https://jsw.ibm.com/browse/WHPHYTELPF-14
+for initiative-2: https://jsw.ibm.com/browse/WHPHYTELPF-13
+for initiative-3: https://jsw.ibm.com/browse/WHPHYTELPF-12
+
+53) Trello for communication engine
+https://trello.com/b/ZmhM89Il/communication-engine
+
+54) Confluence
+https://vbc-confluence.watson-health.ibm.com/display/VWPGMNF/Project+Information
+
+55) Logging level change after deployment
+This is what we followed in PMS 
+https://github.ibm.com/Rajan-Gupta/spring-logger
+
+56) 
+https://test.cloud.ibm.com/docs/healthcare-framework?topic=healthcare-framework-getting-started
+https://test.cloud.ibm.com/login?redirect=%2Fdocs%2Fhealthcare-framework%3Ftopic%3Dhealthcare-framework-hipaa-logging-user-access-to-phi
+
+57) OAuth
+https://oauth.net/code/java/
+https://oauth.net/2/
+https://www.serverless.com/blog/strategies-implementing-user-authentication-serverless-applications/
+https://www.tutorialspoint.com/oauth2.0/index.htm
+https://spring.io/guides/tutorials/spring-boot-oauth2/
+https://spring.io/projects/spring-security-oauth
+https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+http://tutorials.jenkov.com/oauth2/index.html
+https://aaronparecki.com/oauth-2-simplified/
+https://symfonycasts.com/screencast/oauth
+https://tech.fleka.me/serverless-oauth-2-0-flow-7b6bc6061f92
+https://www.youtube.com/results?search_query=spring+integration+tutorial
+https://developers.google.com/identity/protocols/oauth2
+
+58) Watson Health Foundation
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/workloadmgmt.html
+https://github.ibm.com/whc-toolchain/whc-worker-app-1
+https://gist.github.com/btoone/2288960
+
+59) Message Queue
+https://aws.amazon.com/message-queue/
+https://www.tutorialspoint.com/inter_process_communication/inter_process_communication_message_queues.htm
+https://www.ibm.com/cloud/learn/message-queues
+
+60) Design Patterns
+https://github.com/iluwatar/java-design-patterns
+
+61) Spring Webflux
+https://developer.okta.com/blog/2018/09/25/spring-webflux-websockets-react
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html
+https://docs.spring.io/spring-framework/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html
+https://www.baeldung.com/spring-webflux
+https://howtodoinjava.com/spring-webflux/spring-webflux-tutorial/
+http://www.reactive-streams.org/
+https://www.journaldev.com/20763/spring-webflux-reactive-programming
+
+62) App Scan
+Required Truven Network
+tsh\AVRHBB
+https://appscanenterprise.truven.com:9443/ase/
+
+63) ATC
+https://app.lucidchart.com/documents/edit/2fcce7b1-cdbf-4716-a432-607d5acc7fb9/ipXRc6.~22Rv
+
+64) New Relic
+https://github.ibm.com/wh-ops/new-relic
+
+65) Architecture Git repo
+https://github.ibm.com/IBM-WH-ENGMNT/architecture
+
+WebUI
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/web-ui-analysis/components/web-ui/web-ui-design.md
+
+FHIR implementation guide
+https://pages.github.ibm.com/IBM-WH-ENGMNT/common-fhir-ig/
+https://pages.github.ibm.com/IBM-WH-ENGMNT/common-fhir-ig/artifacts.html
+
+66) kNative
+https://www.ibm.com/cloud/learn/knative
+https://cloud.google.com/knative
+https://knative.dev/
+
+67) Eenadu Pratibha
+http://www.eenadupratibha.net/Pratibha/G2Notification.aspx
+
+68) Restart pod
+https://medium.com/faun/how-to-restart-kubernetes-pod-7c702ca984c1
+$ kubectl scale deployment chat --replicas=0 -n service
+$ kubectl scale deployment chat --replicas=2 -n service
+https://stackoverflow.com/questions/46123457/restart-container-within-pod
+$ kubectl delete pod <pod-name>
+
+69) Kafka
+https://kafka.apache.org/documentation.html#intro_topics
+https://kafka.apache.org/documentation.html#consumerconfigs
+https://developer.ibm.com/technologies/java/tutorials/use-spring-kafka-to-access-an-event-streams-service/
+
+70) AppID
+https://cloud.ibm.com/docs/appid?topic=appid-getting-started
+https://cloud.ibm.com/docs/appid?topic=appid-single-page
+
+71) API Connect
+https://cloud.ibm.com/docs/apiconnect/tutorials?topic=apiconnect-tut_create_api_node
+
+72) kstream
+https://kafka.apache.org/documentation/streams/
+https://docs.confluent.io/current/streams/index.html
+
+73) Watson health approved cloud services
+https://w3.ibm.com/w3publisher/whsecurity/cloud-services-status/ibm-cloud-services-status
+
+74) Copy Right
+This is what i’m most familiar with:
+https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/WHI%20Product%20Development/page/Copyright%20Statement%20Guidelines
+They also have a tool to check / insert:
+https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/WHI%20Product%20Development/page/Eclipse%20Copyright%20Tool%20for%20Git%20Java%20Projects
+
+75) URLS
+NiFi UI
+https://nifi-cdt-provider-engmnt-ns-01.wh-engmnt.dev.watson-health.ibm.com/nifi
+NiFi Registry
+https://nifi-cdt-provider-engmnt-ns-01.wh-engmnt.dev.watson-health.ibm.com/nifi-registry/
+Flink
+https://flink-ns01.wh-engmnt.dev.watson-health.ibm.com/
+
+76) Patient Match service initiative-2
+https://ibm.ent.box.com/file/677154125431
+
+77) Live Book Spring Boot 
+https://livebook.manning.com/book/spring-boot-in-action/chapter-1/161
+
+78) Express JS
+https://expressjs.com/
+https://www.tutorialspoint.com/expressjs/index.htm
+
+79) FHIR resources Box link
+https://ibm.ent.box.com/folder/117274165117
+
+80) Log Correlation
+https://vbc-confluence.watson-health.ibm.com/pages/viewpage.action?spaceKey=VWPGMNF&title=Log+Correlation
+
+81) Abbreviations
+ALB - Application Load Balancer
+
+82) Open Tracing api
+https://opentracing.io/docs/getting-started/tutorials/
+https://opentracing.io/guides/java/
+https://github.com/yurishkuro/opentracing-tutorial/tree/master/java
+
+83) Kubernetes Access Service located in another namespace
+https://8gwifi.org/docs/kube-externalname.jsp
+
+84) e-Books location
+https://b-ok.asia
+
+85) SonarQube
+https://rules.sonarsource.com/java/RSPEC-4823?search=Make%20sure%20that%20command%20line%20arguments%20are%20used%20safely%20here
+
+86) Github
+Passport/Bitbucket/Sourcetree: gmail creds
+Github.com: rasool007kutty@gmail.com/Welco@09

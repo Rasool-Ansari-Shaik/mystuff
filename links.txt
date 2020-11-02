@@ -1,0 +1,351 @@
+Flink
+-----
+https://data-flair.training/blogs/apache-flink-tutorial/
+https://www.tutorialspoint.com/apache_flink/index.htm
+https://data-flair.training/blogs/flink-tutorial/
+
+
+Kafka
+-----
+https://www.tutorialspoint.com/apache_kafka/apache_kafka_simple_producer_example.htm
+https://www.tutorialspoint.com/zookeeper/index.htm
+https://data-flair.training/blogs/apache-kafka-tutorial/
+https://www.geeksforgeeks.org/differences-between-pointtopoint-and-publish-subscribe-model-in-jms/
+https://j2eereference.com/differences-between-point-to-point-messaging-model-and-publish-subscribe-messaging-model/
+https://www.itworld.com/article/3066873/big-data-messaging-with-kafka-part-2.html?page=3
+https://dzone.com/articles/kafka-architecture
+https://dzone.com/articles/running-apache-kafka-on-windows-os
+
+JIRA 
+-----
+https://jsw.ibm.com/browse/WHPHYTELPF-14
+https://github.com/IBM/FHIR/blob/master/fhir-model/src/main/java/com/ibm/fhir/model/resource/Patient.java
+https://www.ibm.com/cloud/architecture/tutorials/use-cli-to-post-data-to-devops-insights?task=3
+https://app.mural.co/t/phytelmodernization1703/m/phytelmodernization1703/1587141425535/1ceede25b0ead9f46582d31a8e9d7d50b287a5d3
+
+Kubernetes
+-----------
+https://kubernetes.io/docs/concepts/configuration/overview/
+https://kubernetes.io/docs/concepts/architecture/nodes/
+
+Rajan
+------
+C:\Users\RasoolAnsariShaik\_1\softwares\helm-v312-windows-amd64
+https://github.ibm.com/Rajan-Gupta/spring-logger
+
+NiFi
+----
+https://pages.github.ibm.com/wffh/nifi-umbrella/examples/
+
+HRI
+---
+https://pages.github.ibm.com/wffh-hri/docs/deployment.html
+
+
+https://jangomail.zendesk.com/hc/en-us/articles/204153610-Transactional-Event-API
+
+https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#ingress-v1beta1-networking-k8s-io
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#deploymentspec-v1-apps
+https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+https://helm.sh/
+https://www.youtube.com/watch?v=Zzwq9FmZdsU&t=2s
+https://hub.helm.sh/
+https://helm.sh/docs/intro/quickstart/
+https://github.com/helm/helm/releases
+https://helm.sh/docs/intro/install/
+https://helm.sh/docs/topics/rbac/
+https://v2.helm.sh/docs/securing_installation/
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+-------------
+https://www.jfrog.com/confluence/display/JFROG/Maven+Repository
+https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/
+https://www.jfrog.com/confluence/display/JFROG/Maven+Repository
+https://www.jfrog.com/confluence/display/JFROG/Maven+Builds
+-------------
+https://pages.github.ibm.com/wffh/nifi-umbrella/#getting-started/
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+https://helm.sh/docs/intro/install/
+https://github.com/helm/helm/releases
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/sandbox-cluster/sandbox-cluster.html
+https://v2.helm.sh/docs/securing_installation/
+-------------
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/learn/dev-ops/pipeline-structure.html
+https://www.hl7.org/fhir/bundle.html
+https://ibm.github.io/FHIR/guides/FHIRModelGuide/
+https://github.ibm.com/modern-poc/hello-world/blob/master/chart/hello-world/templates/deployment.yaml
+https://github.ibm.com/mgedepud/commengine/blob/master/chart/comm-engine/templates/deployment.yaml
+https://github.ibm.com/Rajan-Gupta/flink-docker-compose
+https://github.com/apache/flink-playgrounds
+https://ci.apache.org/projects/flink/flink-docs-stable/getting-started/docker-playgrounds/flink-operations-playground.html
+--------------
+https://benchmarkdotnet.org/
+https://mkyong.com/java/java-jmh-benchmark-tutorial/
+http://tutorials.jenkov.com/java-performance/jmh.html
+https://openjdk.java.net/projects/code-tools/jmh/
+https://www.lucidchart.com/documents#/dashboard
+https://www.lucidchart.com/documents/edit/ccf8d3b6-2c7b-495c-bfb1-266a5cf0a556/-_FN5S_s9NbO
+https://www.ibm.com/garage/method/practices/manage/practice_circuit_breaker_pattern
+https://spring.io/projects/spring-cloud-circuitbreaker
+https://resilience4j.readme.io/docs/getting-started
+https://resilience4j.readme.io/docs/circuitbreaker
+https://www.baeldung.com/resilience4j
+https://www.infoq.com/news/2014/05/nano-services/
+https://dzone.com/articles/microservices-nanoservices-teraservices-and-server-1	
+
+Reactive Programming: https://www.youtube.com/watch?v=q2ynYUkVWnY&list=PLF5kUO89mjNqNzTG8NvQWjqS7EGlDvGUs
+RxJava: https://www.youtube.com/watch?v=AIO7ruJHRWc&list=PLYHDP_mF5KjYC-k2DEVtOZCmjHfQqnav4&index=33
+Istio: https://developers.redhat.com/topics/service-mesh/
+
+Java8: https://www.tutorialspoint.com/java8/java8_overview.htm
+https://winterbe.com/posts/2014/03/16/java-8-tutorial/
+
+Linux Editor Online: CoCalc
+Apache SkyWalking: https://github.com/apache/skywalking/tree/master/docs
+https://www.youtube.com/watch?v=byaoaRKN4Ts
+
+Cluster High Availability: https://cloud.ibm.com/docs/containers?topic=containers-ha_clusters
+https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html
+
+IAM: https://cloud.ibm.com/docs/iam?topic=iam-iamoverview
+
+KsqlDB: https://docs.confluent.io/current/ksqldb/tutorials/index.html
+
+override.yaml: https://pages.github.ibm.com/wh-ops/wh-ops-playbook/checklist/ready/application-properties/application-properties.html
+
+Kafka: https://kafka.apache.org/documentation.html#intro_topics
+
+Maven Works: https://blog.packagecloud.io/eng/2017/03/09/how-does-a-maven-repository-work/
+https://mkyong.com/maven/how-to-use-maven-dependency-to-download-library-automatically/
+
+AppID: https://cloud.ibm.com/docs/appid?topic=appid-getting-started
+
+Kafka Streams: https://docs.confluent.io/current/streams/index.html
+
+
+https://hazelcast.com/glossary/event-stream-processing/
+https://cloud.ibm.com/docs/EventStreams/index.html
+https://livebook.manning.com/book/spring-boot-in-action/chapter-1/161
+
+https://medium.com/@OPTASY.com/react-js-vs-node-js-what-are-the-main-differences-which-one-to-choose-for-your-next-web-app-7b07e344e4fb
+https://ibm.github.io/FHIR/guides/FHIRValidationGuide/#making-profiles-available-to-the-fhir-registry-component-(fhirregistry)
+
+https://we-are.bookmyshow.com/understanding-expose-in-dockerfile-266938b6a33d
+https://docs.docker.com/engine/reference/builder/
+https://phoenixnap.com/kb/docker-image-vs-container
+https://stackify.com/docker-image-vs-container-everything-you-need-to-know/
+
+https://www.tutorialspoint.com/expressjs/index.htm
+
+https://developer.ibm.com/articles/i-json-table-trs/
+https://developer.ibm.com/technologies/systems/articles/i-json-table-trs/
+https://www.ibm.com/support/producthub/db2/docs/content/SSEPGG_11.5.0/com.ibm.db2.luw.sql.ref.doc/doc/r0070414.html?pos=2
+http://www.db2dean.com/Previous/JSONinDB2.html
+
+https://currentmillis.com/
+
+Document on Jango and Genesis API (Local Setup)
+
+https://livebook.manning.com/book/spring-boot-in-action/chapter-2/35
+https://github.ibm.com/rashaik4/spring-boot-playground/blob/spring-boot-cli/README.md#installing-the-cli
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/web-ui-analysis/components/web-ui/web-ui-design.md
+https://livebook.manning.com/book/learn-kubernetes-in-a-month-of-lunches/welcome/v-5/
+https://livebook.manning.com/book/learn-kubernetes-in-a-month-of-lunches/chapter-1/v-5
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-1/v-3/61
+
+https://pages.github.ibm.com/wh-ops/wh-ops-playbook/
+https://www.ibm.com/cloud/architecture/tutorials/use-jenkins-plugin-to-post-data-to-devops-insights
+https://www.ibm.com/cloud/architecture/tutorials/use-cli-to-post-data-to-devops-insights
+https://www.ibm.com/cloud/architecture/tutorials/integrate-devops-insights-with-cd-pipeline
+https://www.serverless.com/framework/docs/providers/aws/guide/quick-start/
+https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/
+
+https://www.bmc.com/blogs/kubernetes-services/
+https://kubernetes.io/docs/concepts/services-networking/service/
+https://redis.io/topics/introduction
+https://www.tutorialspoint.com/redis/redis_quick_guide.htm
+https://docs.spring.io/spring-framework/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html
+
+https://docs.spring.io/spring-framework/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html
+https://www.ibm.com/cloud/blog/use-key-protect-as-a-vault-for-multicloud-credentials
+https://app.mural.co/t/phytelmodernization1703/m/phytelmodernization1703/1590690972326/126eff43d7db49c93b2d1baf1f99b392ffeec58f
+
+Documents
+=============
+Steps to run scheduler flow
+Approach for handling large Kafka Messages_v1
+Document on Jango-Genesys-APIs
+
+TypeScript: https://www.udemy.com/course/typescript-the-complete-developers-guide/
+ExpressJS: https://www.udemy.com/course/just-express-with-a-bunch-of-node-and-http-in-detail/
+Flink: https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/
+
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-1/v-3/85
+https://livebook.manning.com/
+https://www.tutorialspoint.com/apache_flink/apache_flink_big_data_platform.htm
+https://livebook.manning.com/book/spring-boot-in-action/chapter-2/76
+
+https://livebook.manning.com/book/spring-boot-in-action/chapter-2/166
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-1/v-3/107
+https://www.journaldev.com/24601/java-11-features
+https://www.journaldev.com/20395/java-10-features
+https://www.journaldev.com/13121/java-9-features-with-examples
+http://localhost:8000/readingList
+
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-1/v-3/115
+https://livebook.manning.com/book/spring-boot-in-action/chapter-2/170
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/components/atc.md
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/components/orp.md
+https://www.ibm.com/cloud/blog/use-key-protect-as-a-vault-for-multicloud-credentials
+https://gist.github.com/data-henrik/601e612442524c1ba32dc1c4fda88b99#file-getcredsfromkeyprotect-py
+https://gist.github.com/data-henrik/dc897fc924207589d47cb3aa68867ace#file-deploytokeyprotect-sh
+
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-2/v-4/1
+https://doc.lagout.org/programmation/Spring%20Boot%20in%20Action.pdf
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/education.md
+https://www.ibm.com/cloud/architecture/content/course/helm-fundamentals/chart-template-helpers
+https://medium.com/hepsiburadatech/high-available-flink-cluster-on-kubernetes-setup-73b2baf9200e
+https://ci.apache.org/projects/flink/flink-docs-stable/ops/jobmanager_high_availability.html
+https://ci.apache.org/projects/flink/flink-docs-release-1.1/setup/jobmanager_high_availability.html
+https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/11929150#overview
+https://www.youtube.com/watch?v=PAKJ1oCdlpY
+
+Flink Udemy Tutorial
+https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/learn/lecture/11929150#overview
+
+Kubernetes
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-2/v-3
+https://livebook.manning.com/book/kubernetes-in-action-second-edition/chapter-2/v-4/1
+
+Spring Boot
+https://doc.lagout.org/programmation/Spring%20Boot%20in%20Action.pdf
+
+draw.io
+https://app.diagrams.net/
+
+Helm
+https://helm.sh/docs/chart_template_guide/debugging/
+https://www.ibm.com/cloud/architecture/content/course/helm-fundamentals/chart-template-helpers
+https://v2.helm.sh/docs/developing_charts/
+
+https://en.wikipedia.org/wiki/Semantic_query
+http://www.linkeddatatools.com/introducing-rdfs-owl
+https://www.w3.org/TR/rdf-sparql-query/
+https://jena.apache.org/tutorials/sparql.html
+https://www.w3.org/TR/owl-semantics/examples.html
+https://www.w3.org/TR/owl-guide/
+https://www.w3.org/TR/owl2-overview/
+
+https://broadband.apit.ap.gov.in
+
+https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ports-targetport-nodeport-service.html
+https://www.mirantis.com/blog/introduction-to-yaml-part-2-kubernetes-services-ingress-and-repeated-nodes/
+
+jUnit
+https://www.guru99.com/junit-exception-test.html
+https://www.vogella.com/tutorials/JUnit/article.html
+
+Spring Boot	
+	https://dzone.com/articles/top-10-spring-boot-interview-questions
+	https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/
+	https://www.baeldung.com/spring-boot-interview-questions
+	https://www.springboottutorial.com/spring-boot-interview-questions
+	
+Microservices	
+	https://dzone.com/articles/top-29-microservices-interview-questions-for-2019
+	https://dzone.com/articles/top-microservices-interview-questions-for-2019-par
+	https://www.edureka.co/blog/interview-questions/microservices-interview-questions/
+	
+	
+	
+SAML	
+	https://www.youtube.com/watch?v=0fmNoqz6Urw
+	https://www.youtube.com/watch?v=i8wFExDSZv0
+	https://www.youtube.com/watch?v=SvppXbpv-5k
+
+some info
+----------
+docker images
+docker build -t cf-demo-v1:v1 .
+docker run --rm -p 8080:8080 cf-demo-v1:v1
+docker tag cf-demo-v1:v1 us.icr.io/cluster-ns-1a/cf-demo-v1:v1
+docker push us.icr.io/cluster-ns-1a/cf-demo-v1:v1
+
+ibmcloud fn action create greeter --docker cluster-ns-1a/cf-demo-v1:v1 greeter
+
+
+https://www.dataquest.io/blog/tutorial-install-linux-on-windows-wsl/
+https://github.com/apache/openwhisk/blob/master/docs/conductors.md
+https://github.com/apache/openwhisk-composer
+https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+https://kubernetes.io/docs/concepts/services-networking/ingress/
+https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
+https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
+https://helm.sh/docs/
+https://helm.sh/docs/intro/quickstart/
+https://github.com/serverless/serverless-openwhisk/blob/master/README.md
+https://openwhisk.apache.org/documentation.html
+https://openwhisk.apache.org/
+https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#using-rest-apis-with-openwhisk
+https://github.com/apache/openwhisk/blob/master/docs/reference.md#openwhisk-entities
+https://serverless.com/framework/docs/dashboard/cicd/custom-scripts/
+https://www.oreilly.com/library/view/learning-apache-openwhisk/9781492046158/ch01.html
+https://github.com/serverless/serverless-openwhisk
+
+
+https://www.ibm.com/cloud/learn/kubernetes
+https://www.ibm.com/cloud/learn/istio
+https://www.ibm.com/cloud/learn/serverless
+https://www.ibm.com/cloud/tekton
+https://www.ibm.com/cloud/learn/knative
+https://knative.dev/
+https://cloud.google.com/knative
+
+https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
+https://cloud.ibm.com/docs/containers?topic=containers-service-binding
+
+
+https://stackoverflow.com/questions/39762760/javax-net-ssl-sslexception-certificate-doesnt-match-any-of-the-subject-alterna
+
+https://examples.javacodegeeks.com/enterprise-java/log4j/log4j-enable-disable-logging-example/
+https://cloud.ibm.com/docs/cli?topic=cloud-cli-monitoring_logging
+
+https://hackernoon.com/a-super-quick-comparison-between-kafka-and-message-queues-e69742d855a8
+https://itnext.io/is-kafka-a-message-queue-or-a-stream-processing-platform-7decc3cf1cf
+https://www.tutorialspoint.com/apache_kafka/apache_kafka_introduction.htm
+
+https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/components/atc.md
+https://github.ibm.com/IBM-WH-ENGMNT/architecture
+https://github.ibm.com/whc-toolchain/whc-worker-app-1
+https://github.com/apache/flink/tree/master/flink-examples/flink-examples-streaming/src/main/java/org/apache/flink/streaming/examples/wordcount
+https://ci.apache.org/projects/flink/flink-docs-stable/getting-started/tutorials/local_setup.html
+https://www.tutorialspoint.com/apache_flink/apache_flink_running_program.htm
+
+https://github.ibm.com/whc-toolchain/whc-commons/blob/development/docs/ASoC/asocScan.md
+
+https://github.com/resilience4j/resilience4j
+https://dzone.com/articles/circuit-breaker-implementation-in-resilience4j
+https://www.exoscale.com/syslog/migrate-from-hystrix-to-resilience4j/
+https://www.baeldung.com/resilience4j
+https://github.com/eugenp/tutorials/blob/master/libraries-6/pom.xml
+https://martinfowler.com/bliki/CircuitBreaker.html
+https://github.com/eugenp/tutorials/blob/master/libraries-6/src/test/java/com/baeldung/resilence4j/Resilience4jUnitTest.java
+https://github.com/resilience4j/resilience4j/blob/master/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/CircuitBreakerConfig.java
+
+https://www.baeldung.com/spring-webflux
+https://projectreactor.io/
+https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html
+https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html
+
+
+1) Resilience4j 
+   - Circuit Breaker
+   - Rate Limiter
+   - Retry
+
+
+2) JFrog
+
+3) JMH

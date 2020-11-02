@@ -25,6 +25,7 @@ Annotations
 @RunWith
 @SuiteClasses
 @Suite.SuiteClasses
+@Rule
 
 Assert methods
 -> assertEquals, assertTrue, assertFalse, assertNull, assertNotNull, assertSame, assertNotSame, fail
@@ -35,6 +36,8 @@ TestCase, TestResult, TestSuite *** Are these in latest version?
 Assert
 -> Assert is a class which provides a bunch of assertion methods useful in determining Pass or Fail status of a test case
 
+Error Collector
+-> With JUnit error collector, you can still continue with the test execution even after an issue is found or test fails. Error collector collects all error objects and reports it only once after the test execution is over. The benefit of adding all errors in an Error Collector is that you can verify all the errors at once. Also, if the script fails in the middle, it can still continue executing it.
 
  
 

@@ -1,0 +1,55 @@
+nifi 
+apache maven  
+Desktop docker 
+git 
+Oracle java 8,9,10,11,12,13
+nodeJS 
+RabbitmQ
+Kafka 
+Liquibase
+AppScan
+Kubernetes
+GitFlow
+JUnit
+Mockito
+Power Mockito
+XUnit
+Shell scripting
+IBM Cloud 
+Cloud Cli
+IBM Analytics Engine
+HRIS
+API Connect (Ingress Controller)
+Kube DNS
+Cloud Object Storage
+Apache OpenWhisk
+Function Composer
+IBM Cloud Functions
+Spring Cloud Functions
+IBM Cloud Event Streams 
+JFrog Artifactory
+Mural
+Lucid Chart
+Kubernetes Ingress
+Kubernetes Load Balancer
+Helm Charts
+Tiller
+Apache Flink
+Spring Integration Framework
+Fault Tolerance - Spring Retry, Resilience4j
+JMH
+Kafka
+Flink
+Nifi
+FHIR
+oAuth
+spring integration
+Spring webflux
+Knative
+Reactive Streams - RxJava, Project Reactor
+Apache Skywalking
+Flink Burrow
+xml/json/turtle
+Prometheus & Grafana
+ExpressJS
+NextJS
