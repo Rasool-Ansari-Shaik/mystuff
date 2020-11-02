@@ -105,8 +105,8 @@ https://jsw.ibm.com/secure/Dashboard.jspa
 https://na.artifactory.swg-devops.com/artifactory
 https://www.jfrog.com/confluence/display/JFROG/Maven+Repository
 https://github.ibm.com/IBM-WH-ENGMNT/use-artifactory
-JFrog API key: AKCp5ekcUyqBCCcSfb6nHj1uFbT3SAHiYAqucyW8zt96bPEiEAuwAUWS42woHDdmxJAReC3A3
-New API key: AKCp5emRKwuP9unc5v1fmsRZsXGK647TFsySoQDxDbEotVNajgUbX9cGUx9PXnaipgmBamct1
+JFrog API key: 
+New API key: 
 
 Pull Artifact from JFrog
 curl -u ${ARTIFACTORY_USER_NAME}:${ARTIFACTORY_API_KEY} -O "${JFROG_ARTIFACTORY}/${file}-${RELEASE_VERSION}.jar"
@@ -163,12 +163,11 @@ https://github.com/apache/flink/tree/master/flink-examples/flink-examples-stream
 https://github.ibm.com/Rajan-Gupta/flink-kakfa-example
 
 28) Secret Key - 1Password
-A3-JYFC7Y-TM7X4S-LDRHE-6SEQ8-V4W79-5W6BV
-Master Password: 1qaz!QAZ@feB2020
+Master Password: 
 
 29) JangoSMTP
 Username=IBMPocAccount
-Password=IBMW@tsonH3alth
+Password=
 https://jangosmtp.com/
 https://api.jangomail.com/
 
@@ -176,9 +175,9 @@ https://api.jangomail.com/
 yopmail.com 
 
 31) API Keys 
-GIT: f98db597338aade1b3e0f892448a5f2ca292cf35
-Personal Cloud: tzQ4hvSjXfamm5PSyAQY9MgP_PQukPo5nHa0vEnaUkZD
-CDT Cloud: TVUjsIznFlA9XtLSLRTLmuzFPRKIWtGcF3BKg-GhNhck   (CDT_RASHAIK_API_KEY_20200406)
+GIT: 
+Personal Cloud: 
+CDT Cloud:    (CDT_RASHAIK_API_KEY_20200406)
 CDT Cluster name: CDT_Provider_ENGMNT_Cluster_01
 CDT Cluster Id: bp1gkpld0m4rqdknsa40
 CDT Cluster namespace: cdt-provider-engmnt-ns-01
@@ -210,7 +209,7 @@ http://jiofi.local.html/
 
 38) Genesys SMS
 Username: bmwatsonhealth
-Password: LmP$04178!
+Password: 
 https://docs.genesys.com/Documentation/POR/2016CD/http/Appendix-Java
 
 39) Modernization Solution Architecture
