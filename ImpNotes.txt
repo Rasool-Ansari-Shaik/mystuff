@@ -284,7 +284,7 @@ https://benchmarkdotnet.org/
 https://github.ibm.com/IBM-WH-ENGMNT/architecture/blob/master/education.md
 
 48) Mural Boards
-https://app.mural.co/invitation/mural/suesilagisworkspace6408/1586268827613?sender=umeshv2042&key=8ca9fab9-16a5-4212-98e1-7b0633569ddc
+https://app.mural.co/invitation/mural/suesilagisworkspace6408/1586268827613?sender=umeshv2042&key=<key>
 
 Initiative 3&4 Mural
 https://app.mural.co/t/phytelmodernization1703/m/phytelmodernization1703/1590690972326/126eff43d7db49c93b2d1baf1f99b392ffeec58f
